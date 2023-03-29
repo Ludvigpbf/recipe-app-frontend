@@ -1,1 +1,6 @@
-/*# sourceMappingURL=search-recipe.component.css.map */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}/*# sourceMappingURL=search-recipe.component.css.map */

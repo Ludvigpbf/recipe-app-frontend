@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"search-recipe.component.css"}
+{"version":3,"sources":["search-recipe.component.scss","search-recipe.component.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;ACCJ","file":"search-recipe.component.css"}
