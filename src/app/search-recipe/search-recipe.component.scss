@@ -3,4 +3,64 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    #search-form {
+        display: flex;
+        justify-content: center;
+        width: 50rem;
+        height: 30rem;
+        margin: 4rem;
+        box-shadow: 0px 2px 4px rgb(193, 192, 192);
+        border-radius: 1rem;
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            label {
+                font-size: 3rem;
+                height: 3rem;
+                text-align: center;
+            }
+
+            input {
+                border: none;
+                box-shadow: 0px 2px 4px rgb(193, 192, 192);
+                border-radius: 1rem;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+            }
+
+            button {
+                border: none;
+                border-radius: 1rem;
+                margin: 1rem;
+                padding: 0.3rem 1rem 0.3rem 1rem;
+                color: rgb(0, 0, 0);
+                font-size: 1rem;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
+                background-color: rgb(13, 212, 13);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(7, 172, 7);
+                }
+            }
+
+        }
+    }
+
+    .recipe-cards {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 60rem;
+        padding: 0.5rem;
+        margin: 1rem;
+        box-shadow: 0px 2px 4px rgb(193, 192, 192);
+        border-radius: 1rem;
+    }
+
 }

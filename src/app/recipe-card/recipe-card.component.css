@@ -2,6 +2,7 @@
   box-shadow: 0px 2px 4px rgb(193, 192, 192);
   border-radius: 0.3rem;
   width: 10rem;
+  margin: 1rem;
 }
 .card img {
   max-width: 10rem;
