@@ -3,10 +3,22 @@
         <h1><a routerLink="/" routerLinkActive="active">PlatePal</a></h1>
     </div>
     <nav id="pages">
-        <a routerLink="/" routerLinkActive="active">Home </a><span>|</span>
-        <a routerLink="/" routerLinkActive="active">Search recipes</a><span>|</span>
-        <a routerLink="/" routerLinkActive="active">My lists</a><span>|</span>
-        <a routerLink="/" routerLinkActive="active">About</a>
+        <div class="page-link-bg">
+            <a routerLink="/" routerLinkActive="active">Home </a>
+        </div>
+        <span>|</span>
+        <div class="page-link-bg">
+            <a routerLink="/search-recipe/1" routerLinkActive="active">Search recipes</a>
+        </div>
+        <span>|</span>
+        <div class="page-link-bg">
+            <a routerLink="/lists/1" routerLinkActive="active">My lists</a>
+        </div>
+        <span>|</span>
+        <div class="page-link-bg">
+            <a routerLink="/about" routerLinkActive="active">About</a>
+        </div>
+
     </nav>
     <div id="user-buttons">
         <button type="button" id="login">Login</button>

@@ -7,7 +7,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 4rem;
-  background-image: linear-gradient(100deg, rgb(58, 13, 146), rgb(81, 21, 238), rgb(130, 47, 197));
+  background-image: linear-gradient(100deg, rgb(58, 13, 146), rgb(63, 117, 242), rgb(81, 21, 238), rgb(130, 47, 197));
 }
 footer div {
   display: flex;
@@ -23,9 +23,13 @@ footer div a {
   border-radius: 1rem;
   width: 7rem;
   text-align: center;
+  background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, 0.3s;
+  background-size: 0% 110%;
+  background-position: 0% 50%;
 }
 footer div a:hover {
-  background-color: rgb(32, 202, 232);
+  background-size: 100% 100%;
   color: black;
-  font-weight: 500;
 }/*# sourceMappingURL=footer.component.css.map */

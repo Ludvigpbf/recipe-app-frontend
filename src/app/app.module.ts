@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
+import { SearchRecipeComponent } from './search-recipe/search-recipe.component';
+import { ListsComponent } from './lists/lists.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    SearchRecipeComponent,
+    ListsComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
