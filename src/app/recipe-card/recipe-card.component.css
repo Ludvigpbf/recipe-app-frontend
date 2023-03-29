@@ -1,1 +1,10 @@
-/*# sourceMappingURL=recipe-card.component.css.map */
+.card img {
+  max-width: 10rem;
+}
+.card .recipe-info {
+  display: flex;
+  flex-direction: row;
+}
+.card .recipe-description {
+  display: flex;
+}/*# sourceMappingURL=recipe-card.component.css.map */

@@ -1,0 +1,15 @@
+.card {
+    img {
+        max-width: 10rem;
+    }
+
+    .recipe-info {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .recipe-description {
+        display: flex;
+    }
+}
