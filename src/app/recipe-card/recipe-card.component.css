@@ -1,14 +1,42 @@
 .card {
-  border: 1px solid black;
+  box-shadow: 0px 2px 4px rgb(193, 192, 192);
+  border-radius: 0.3rem;
   width: 10rem;
 }
 .card img {
   max-width: 10rem;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.card .recipe-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .recipe-title h3 {
+  font-weight: 500;
+  margin: 0;
 }
 .card .recipe-info {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card .recipe-info .card-icons {
+  height: 1.2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.card .recipe-info p {
+  margin: 0;
+}
+.card .recipe-info span {
+  margin: 0.2rem;
 }
 .card .recipe-description {
   display: flex;
+}
+.card .recipe-description p {
+  margin: 1rem;
 }/*# sourceMappingURL=recipe-card.component.css.map */
