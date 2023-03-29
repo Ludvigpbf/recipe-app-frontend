@@ -1,29 +1,106 @@
+@mixin desktop {
+    @media screen and (min-width: 800px) {
+        @content;
+    }
+}
+
 #home {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     width: 100vw;
-    height: 45.5rem;
+    height: 46.5rem;
     background-image: linear-gradient(145deg, purple, orange);
 
-    #hero {
+    /* icons left */
+    #top-left {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+
+            #hamburger {
+                font-size: 12rem;
+                transform: rotate(-35deg);
+            }
+        }
+    }
+
+
+    #middle-left {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            justify-content: end;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+
+            #drink {
+                font-size: 5rem;
+                transform: rotate(35deg);
+            }
+        }
+    }
+
+    #bottom-left {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            justify-content: start;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+
+            #pizza {
+                font-size: 7rem;
+                transform: rotate(150deg);
+            }
+        }
+    }
+
+    /* Middle content */
+
+    #main-content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 2rem;
 
-        h1 {
-            margin: 1rem;
-            font-size: 4rem;
-            color: white;
-            text-shadow: 0px 2px 5px black;
+        #top-center {
+            display: flex;
+            justify-content: start;
+            align-self: flex-end;
+            width: 20rem;
+
+            #fruit {
+                font-size: 5rem;
+                transform: rotate(35deg);
+            }
+        }
+
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem;
+
+            h1 {
+                margin: 1rem;
+                font-size: 4rem;
+                color: white;
+                text-shadow: 0px 2px 5px black;
 
 
-            /* Gradient text */
+                /* Gradient text */
 
-            /* background-color: red;
+                /* background-color: red;
             background-image: linear-gradient(100deg, rgb(130, 47, 197), rgb(81, 21, 238), rgb(63, 117, 242), rgb(58, 13, 146));
             background-size: 100%;
             background-repeat: repeat;
@@ -33,57 +110,129 @@
             -webkit-background-clip: text;
             -moz-background-clip: text;
             -moz-text-fill-color: transparent; */
+            }
+
+            h3 {
+                font-size: 2rem;
+                text-align: center;
+                color: white;
+                text-shadow: 0px 2px 5px black;
+            }
         }
 
-        h3 {
-            font-size: 2rem;
-            text-align: center;
-            color: white;
-            text-shadow: 0px 2px 5px black;
+        #search-container {
+            form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                label {
+                    font-size: 1.5rem;
+                    text-align: center;
+                    color: white;
+                    margin: 0.5rem;
+                    text-shadow: 0px 2px 5px black;
+                }
+
+                input {
+                    margin: 0.5rem;
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
+                    border: none;
+                    border-radius: 1rem;
+                    height: 1.5rem;
+                    width: 15rem;
+                    padding-right: 1rem;
+                    padding-left: 1rem;
+                }
+
+                button {
+                    margin: 0.5rem;
+                    border: none;
+                    border-radius: 1rem;
+                    padding: 0.3rem 1rem 0.3rem 1rem;
+                    color: rgb(0, 0, 0);
+                    font-size: 1rem;
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
+                    background-color: rgb(13, 212, 13);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(7, 172, 7);
+                    }
+                }
+            }
+        }
+
+        #bottom-center {
+            display: flex;
+            justify-content: center;
+
+            @include desktop {
+                width: 30rem;
+            }
+
+            width: 20rem;
+            margin-top: 2rem;
+
+            #egg {
+                font-size: 7rem;
+
+            }
         }
     }
 
-    #search-container {
-        form {
+    /* Icons right */
+
+    #top-right {
+        display: none;
+
+        @include desktop {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: start;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
 
-            label {
-                font-size: 1.5rem;
-                color: white;
-                margin: 0.5rem;
-                text-shadow: 0px 2px 5px black;
-            }
-
-            input {
-                margin: 0.5rem;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
-                border: none;
-                border-radius: 1rem;
-                height: 1.5rem;
-                width: 15rem;
-            }
-
-            button {
-                margin: 0.5rem;
-                border: none;
-                border-radius: 1rem;
-                padding: 0.3rem 1rem 0.3rem 1rem;
-                color: rgb(0, 0, 0);
-                font-size: 1rem;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
-                background-color: rgb(13, 212, 13);
-                cursor: pointer;
-
-                &:hover {
-                    background-color: rgb(7, 172, 7);
-                }
-
+            #bakery {
+                font-size: 8rem;
+                transform: rotate(35deg);
             }
         }
 
+    }
 
+    #middle-right {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            justify-content: end;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+
+            #icecream {
+                font-size: 5rem;
+                transform: rotate(-35deg);
+            }
+        }
+    }
+
+    #bottom-right {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            width: 10rem;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+
+            #dining {
+                font-size: 11rem;
+                transform: rotate(-15deg);
+            }
+        }
     }
 }

@@ -13,6 +13,7 @@
 }
 #navbar #app-title h1 {
   text-shadow: 5px 5px 0px 10px black;
+  margin: 0;
 }
 #navbar #app-title h1 a {
   margin: 1rem;
@@ -25,13 +26,29 @@
 #navbar #app-title h1 a:hover {
   color: rgb(255, 255, 255);
 }
-#navbar #pages {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
+@media screen and (min-width: 800px) {
+  #navbar #phone-menu {
+    display: none;
+  }
+  #navbar #phone-menu ::ng-deep .mat-menu {
+    background-color: red;
+  }
+  #navbar #phone-menu .mat-menu-item {
+    background-color: red;
+  }
 }
-#navbar #pages .page-link-bg {
+#navbar #desctop-menu {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  #navbar #desctop-menu {
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    display: flex;
+  }
+}
+#navbar #desctop-menu .page-link-bg {
   display: flex;
   align-items: center;
   height: 4rem;
@@ -41,50 +58,60 @@
   background-size: 100% 0%;
   background-position: 50% 50%;
 }
-#navbar #pages .page-link-bg:hover {
+#navbar #desctop-menu .page-link-bg:hover {
   background-size: 100% 100%;
 }
-#navbar #pages .page-link-bg:hover a {
+#navbar #desctop-menu .page-link-bg:hover a {
   color: black;
 }
-#navbar #pages .page-link-bg a {
+#navbar #desctop-menu .page-link-bg a {
   margin: 1rem;
   color: white;
   text-decoration: none;
 }
-#navbar #pages span {
+#navbar #desctop-menu span {
   color: white;
+}
+@media screen and (min-width: 800px) {
+  #navbar #user-menu {
+    display: none;
+  }
 }
 #navbar #user-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
+  display: none;
 }
-#navbar #user-buttons button {
-  width: 5rem;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border-radius: 1rem;
-  background: transparent;
-  color: white;
-  border: none;
-  background-repeat: no-repeat;
-  transition: background-size 0.3s, 0.3s;
-  background-size: 0% 110%;
-  background-position: 0% 50%;
-}
-#navbar #user-buttons button:hover {
-  background-size: 100% 100%;
-  color: black;
-  border: none;
-  cursor: pointer;
-}
-#navbar #user-buttons #login {
-  background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
-}
-#navbar #user-buttons #register {
-  background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
-}
-#navbar #user-buttons #logout {
-  background-image: linear-gradient(rgb(232, 32, 32), rgb(232, 32, 32));
+@media screen and (min-width: 800px) {
+  #navbar #user-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+  }
+  #navbar #user-buttons button {
+    width: 5rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    border-radius: 1rem;
+    background: transparent;
+    color: white;
+    border: none;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s, 0.3s;
+    background-size: 0% 110%;
+    background-position: 0% 50%;
+  }
+  #navbar #user-buttons button:hover {
+    background-size: 100% 100%;
+    color: black;
+    border: none;
+    cursor: pointer;
+  }
+  #navbar #user-buttons #login {
+    background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
+  }
+  #navbar #user-buttons #register {
+    background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
+  }
+  #navbar #user-buttons #logout {
+    background-image: linear-gradient(rgb(232, 32, 32), rgb(232, 32, 32));
+  }
 }/*# sourceMappingURL=navbar.component.css.map */

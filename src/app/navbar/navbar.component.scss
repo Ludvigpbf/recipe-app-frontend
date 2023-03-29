@@ -1,3 +1,9 @@
+@mixin desktop {
+    @media screen and (min-width: 800px) {
+        @content;
+    }
+}
+
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -14,6 +20,7 @@
 
         h1 {
             text-shadow: 5px 5px 0px 10px black;
+            margin: 0;
 
             a {
                 margin: 1rem;
@@ -23,6 +30,7 @@
                 text-shadow: 0px 2px 5px black;
                 transition: color .3s, .3s;
 
+
                 &:hover {
                     color: rgb(255, 255, 255);
 
@@ -31,11 +39,33 @@
         }
     }
 
-    #pages {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25rem;
+    @include desktop {
+        #phone-menu {
+            display: none;
+
+            ::ng-deep .mat-menu {
+                background-color: red;
+            }
+
+            .mat-menu-item {
+                background-color: red;
+            }
+
+            button {}
+        }
+
+
+    }
+
+    #desctop-menu {
+        display: none;
+
+        @include desktop {
+            justify-content: center;
+            align-items: center;
+            width: 30rem;
+            display: flex;
+        }
 
         .page-link-bg {
             display: flex;
@@ -68,42 +98,52 @@
         }
     }
 
+    @include desktop {
+        #user-menu {
+            display: none;
+        }
+    }
+
     #user-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25rem;
+        display: none;
 
-        button {
-            width: 5rem;
-            padding: 0.3rem 1rem 0.3rem 1rem;
-            border-radius: 1rem;
-            background: transparent;
-            color: white;
-            border: none;
-            background-repeat: no-repeat;
-            transition: background-size .3s, .3s;
-            background-size: 0% 110%;
-            background-position: 0% 50%;
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25rem;
 
-            &:hover {
-                background-size: 100% 100%;
-                color: black;
+            button {
+                width: 5rem;
+                padding: 0.3rem 1rem 0.3rem 1rem;
+                border-radius: 1rem;
+                background: transparent;
+                color: white;
                 border: none;
-                cursor: pointer;
+                background-repeat: no-repeat;
+                transition: background-size .3s, .3s;
+                background-size: 0% 110%;
+                background-position: 0% 50%;
+
+                &:hover {
+                    background-size: 100% 100%;
+                    color: black;
+                    border: none;
+                    cursor: pointer;
+                }
             }
-        }
 
-        #login {
-            background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
-        }
+            #login {
+                background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
+            }
 
-        #register {
-            background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
-        }
+            #register {
+                background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
+            }
 
-        #logout {
-            background-image: linear-gradient(rgb(232, 32, 32), rgb(232, 32, 32));
+            #logout {
+                background-image: linear-gradient(rgb(232, 32, 32), rgb(232, 32, 32));
+            }
         }
     }
 }

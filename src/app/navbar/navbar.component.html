@@ -1,8 +1,11 @@
 <div id="navbar">
+    <nav id="phone-menu">
+        <button [matMenuTriggerFor]="mainMenu"><mat-icon>menu</mat-icon></button>
+    </nav>
     <div id="app-title">
         <h1><a routerLink="/" routerLinkActive="active">PlatePal</a></h1>
     </div>
-    <nav id="pages">
+    <nav id="desctop-menu">
         <div class="page-link-bg">
             <a routerLink="/" routerLinkActive="active">Home </a>
         </div>
@@ -20,6 +23,9 @@
         </div>
 
     </nav>
+    <nav id="user-menu">
+        <button [matMenuTriggerFor]="userMenu"><mat-icon>person</mat-icon></button>
+    </nav>
     <div id="user-buttons">
         <!-- if statment -->
         <button type="button" id="login">Login</button>
@@ -27,3 +33,19 @@
         <button type="button" id="logout">Logout</button>
     </div>
 </div>
+
+<!-- Phone menu -->
+<mat-menu #mainMenu>
+    <button mat-menu-item><mat-icon>home</mat-icon>Home</button>
+    <button mat-menu-item><mat-icon>search</mat-icon>Search recipes</button>
+    <button mat-menu-item><mat-icon>info</mat-icon>About</button>
+    <button mat-menu-item><mat-icon>list</mat-icon>My lists</button>
+</mat-menu>
+
+<!-- User menu -->
+<mat-menu #userMenu>
+    <button mat-menu-item><mat-icon>lock_open</mat-icon>Login</button>
+    <button mat-menu-item><mat-icon>assignment</mat-icon>Register</button>
+    <button mat-menu-item><mat-icon>exit_to_app</mat-icon>Logout</button>
+    <button mat-menu-item><mat-icon>settings</mat-icon>Settings</button>
+</mat-menu>
