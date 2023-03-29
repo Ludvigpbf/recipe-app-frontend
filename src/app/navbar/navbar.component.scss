@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 4rem;
-    background-color: rgb(58, 21, 146);
+    background-image: linear-gradient(100deg, rgb(130, 47, 197), rgb(81, 21, 238), rgb(58, 13, 146));
 
     #app-title {
         display: flex;
@@ -11,11 +11,16 @@
         align-items: center;
         width: 25rem;
 
-        h2 {
+
+        h1 {
+            text-shadow: 5px 5px 0px 10px black;
+
             a {
                 margin: 1rem;
-                color: rgb(32, 202, 232);
+                color: rgb(255, 255, 255);
                 text-decoration: none;
+                letter-spacing: 0.1rem;
+                text-shadow: 0px 2px 5px black;
 
                 &:hover {
                     color: rgb(140, 233, 249);
@@ -58,37 +63,40 @@
             width: 5rem;
             padding: 0.3rem 1rem 0.3rem 1rem;
             border-color: white;
-            border: 1px solid rgb(32, 202, 232);
+            border: none;
             border-radius: 1rem;
-            background-color: rgb(58, 21, 146);
+            background-color: rgba(255, 255, 255, 0);
             color: white;
+            border: 1px solid white;
 
             &:hover {
                 color: black;
                 background-color: rgb(32, 202, 232);
                 font-weight: 500;
+                border: none;
             }
         }
 
         #login {
-            border: 1px solid rgb(13, 212, 13);
-            background-color: rgb(58, 21, 146);
+
+
             color: white;
 
             &:hover {
                 color: black;
                 background-color: rgb(13, 212, 13);
+                border: none;
             }
         }
 
         #logout {
-            border: 1px solid rgb(228, 22, 22);
-            background-color: rgb(58, 21, 146);
+
             color: white;
 
             &:hover {
                 color: black;
                 background-color: rgb(232, 32, 32);
+                border: none;
             }
         }
     }
