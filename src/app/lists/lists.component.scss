@@ -1,73 +1,219 @@
 #lists {
     display: flex;
-    align-items: center;
-    width: 100vw;
-    min-height: 90vh;
-    align-items: center;
+    width: 100%;
+    min-height: 100vh;
 
+    #crud-favourites-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5rem;
 
-    #crud {
-        margin: 2rem;
-        box-shadow: 0px 2px 4px rgb(193, 192, 192);
-        min-height: 30rem;
-        min-width: 25rem;
-
-        #create-list {
+        /* Crud section */
+        #crud {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 2px 4px rgb(193, 192, 192);
-            margin: 2rem;
-            min-height: 10rem;
+            flex-direction: row;
+            margin: 1rem;
+            justify-self: flex-start;
+            min-height: 15rem;
+            min-width: 25rem;
 
-            h2 {
-                text-decoration: underline;
+            /* Create list card */
+
+            #create-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 2px 4px rgb(193, 192, 192);
+                margin: 2rem;
+                max-height: 20rem;
+                min-width: 20rem;
+
+                h2 {
+                    text-decoration: underline;
+                    margin: 1rem;
+                }
+
+                /* Create list form */
+
+                #create-list-form {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    label {
+                        font-weight: 500;
+                        margin: 0.1rem;
+                    }
+
+                    #list-input {
+                        border-radius: 0.2rem;
+                        padding: 0.1rem;
+                        margin: 0.5rem;
+                    }
+
+                    #create-list-button {
+                        background: transparent;
+                        padding: 0.1rem 1rem 0.1rem 1rem;
+                        border-radius: 0.3rem;
+                        border-color: black;
+                        cursor: pointer;
+                    }
+                }
             }
 
-            #create-list-form {
+            /* Edit list card */
+
+            #edit-list {
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 2px 4px rgb(193, 192, 192);
+                margin: 2rem;
+                min-height: 15rem;
+                min-width: 20rem;
+
+                h2 {
+                    text-decoration: underline;
+                    margin: 1rem;
+                }
+
+                /* Edit list form */
+
+                #edit-list-form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    #lists-dropdown-label {
+                        font-weight: 500;
+                        margin: 0.1rem;
+                    }
+
+                    #list-select-dropdown {
+                        min-width: 8rem;
+                        border-radius: 0.2rem;
+                        padding: 0.1rem;
+                        margin: 0.5rem;
+                    }
+
+                    #list-input-label {
+                        font-weight: 500;
+                        margin: 0.1rem;
+                    }
+
+                    #edit-list-input {
+                        border-radius: 0.2rem;
+                        padding: 0.1rem;
+                        margin: 0.5rem;
+                    }
+
+                    #edit-list-button {
+                        background: transparent;
+                        padding: 0.1rem 1rem 0.1rem 1rem;
+                        border-radius: 0.3rem;
+                        border-color: black;
+                        cursor: pointer;
+
+                    }
+                }
             }
         }
 
-        #update-list {
+        /* Favourites section */
+        #favourite-recipes {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
-            box-shadow: 0px 2px 4px rgb(193, 192, 192);
-            margin: 2rem;
-            min-height: 10rem;
-
-            h2 {
-                text-decoration: underline;
-            }
-
-            #update-list-form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
+            justify-content: center;
+            max-width: 50rem;
+            margin: 1rem;
         }
     }
 
+    /* List section */
+
     #lists-section {
         display: flex;
-        justify-self: center;
-        align-items: center;
         flex-direction: column;
-        box-shadow: 0px 2px 4px rgb(193, 192, 192);
-        min-width: 30rem;
-        min-height: 20rem;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
 
-        .list-card {
+        #list-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0px 2px 4px rgb(193, 192, 192);
+            max-width: 30rem;
+            min-height: 20rem;
+            margin: 3rem;
+
+            h1 {
+                margin: 1rem;
+                font-weight: 500;
+                text-decoration: underline;
+            }
+
+            /* List card */
+
+            .list-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid black;
+                border-radius: 0.3rem;
+                min-width: 25rem;
+                margin: 0.5rem 2rem 0.5rem 2rem;
+                padding: 0 0.5rem 0 0.5rem;
+
+                .list-title-div {
+                    width: 100%;
+
+                    h2 {
+                        margin: 0.3rem 0.3rem 0 0.3rem;
+                    }
+                }
+
+                .list-info-delete-div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .list-info-div {
+                        display: flex;
+                        justify-self: center;
+                        align-items: center;
+                        flex-direction: row;
+
+                        p {
+                            margin: 0 0.3rem 0.3rem 0.3rem;
+                        }
+
+                        span {
+                            color: black;
+                            margin: 0 0.3rem 0.3rem 0.3rem;
+                        }
+                    }
+
+                    .delete-list-form {
+                        .delete-list-button {
+                            background: transparent;
+                            padding: 0.1rem 1rem 0.1rem 1rem;
+                            border-radius: 0.3rem;
+                            border-color: black;
+                            cursor: pointer;
+                            margin: 0 0.3rem 0.3rem 0.3rem;
+                        }
+                    }
+                }
+            }
         }
     }
 

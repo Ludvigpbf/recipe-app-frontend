@@ -1,32 +1,86 @@
 <section id="lists">
-    <!-- Crud for lists -->
-    <div id="crud">
-        <div id="create-list">
-            <h2>Create new list</h2>
-            <form id="create-list-form" action="post">
-                <label for="list-input">List name: </label>
-                <input type="text" name="list-input" id="list-input">
-                <button type="submit">Create list</button>
-            </form>
-        </div>
-        <div id="update-list">
-            <h2>Update list</h2>
-            <form id="update-list-form" action="post">
-                <label for="lists-dropdown">Choose a list:</label>
-                <select name="lists-dropdown" id="list-select">
-                    <option value="list-title">list title</option>
-                </select>
-                <label for="list-input">List name: </label>
-                <input type="text" name="list-input" id="update-list-input" placeholder="(listname)">
-                <button type="submit">Update list</button>
-            </form>
-        </div>
-    </div>
-    <!-- Lists -->
-    <div id="lists-section">
-        <div class="list-card">
-            <h1>Listname</h1>
 
+    <div id="crud-favourites-section">
+
+        <!-- Crud for lists -->
+
+        <div id="crud">
+            <div id="create-list">
+                <h2>Create new list</h2>
+                <form id="create-list-form" action="post">
+                    <label for="list-input">List name: </label>
+                    <input type="text" name="list-input" id="list-input" placeholder="Add list title">
+                    <button id="create-list-button" type="submit">Create list</button>
+                </form>
+            </div>
+            <div id="edit-list">
+                <h2>Edit list</h2>
+                <form id="edit-list-form" action="post">
+                    <label id="lists-dropdown-label" for="lists-dropdown">Choose a list:</label>
+                    <select name="lists-dropdown" id="list-select-dropdown">
+                        <!-- for loop of lists -->
+                        <option class="list-title-option" value="list-title">Lists</option>
+                        <option class="list-title-option" value="list-title">Lists</option>
+                        <option class="list-title-option" value="list-title">Lists</option>
+                        <option class="list-title-option" value="list-title">Lists</option>
+                        <option class="list-title-option" value="list-title">Lists</option>
+                    </select>
+                    <label id="list-input-label" for="list-input">New list name: </label>
+                    <input type="text" name="list-input" id="edit-list-input" placeholder="(listname)">
+                    <button id="edit-list-button" type="submit">Done</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Favourite recipes list -->
+
+        <div id="favourite-recipes">
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
+
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
+            <app-recipe-card></app-recipe-card>
         </div>
     </div>
+
+    <!-- Lists -->
+
+    <div id="lists-section">
+        <div id="list-container">
+            <h1>Lists</h1>
+            <div class="list-card">
+                <div class="list-title-div">
+                    <h2>List title</h2>
+                </div>
+                <div class="list-info-delete-div">
+                    <div class="list-info-div">
+                        <p>10 recipes</p><span>|</span>
+                        <p>Created: </p>
+                    </div>
+                    <form class="delete-list-form" action="post">
+                        <button class="delete-list-button" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-title-div">
+                    <h2>List title</h2>
+                </div>
+                <div class="list-info-delete-div">
+                    <div class="list-info-div">
+                        <p>10 recipes</p><span>|</span>
+                        <p>Created: </p>
+                    </div>
+                    <form class="delete-list-form" action="post">
+                        <button class="delete-list-button" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
