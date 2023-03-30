@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { ListDetailsComponent } from './list-details/list-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     AboutComponent,
     HomeComponent,
     RecipeDetailsComponent,
+    ListDetailsComponent,
   ],
   imports: [
     BrowserModule,

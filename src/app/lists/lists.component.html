@@ -1,7 +1,32 @@
 <section id="lists">
+    <!-- Crud for lists -->
     <div id="crud">
-        <div id="create-list"></div>
-        <div id="update-list"></div>
+        <div id="create-list">
+            <h2>Create new list</h2>
+            <form id="create-list-form" action="post">
+                <label for="list-input">List name: </label>
+                <input type="text" name="list-input" id="list-input">
+                <button type="submit">Create list</button>
+            </form>
+        </div>
+        <div id="update-list">
+            <h2>Update list</h2>
+            <form id="update-list-form" action="post">
+                <label for="lists-dropdown">Choose a list:</label>
+                <select name="lists-dropdown" id="list-select">
+                    <option value="list-title">list title</option>
+                </select>
+                <label for="list-input">List name: </label>
+                <input type="text" name="list-input" id="update-list-input" placeholder="(listname)">
+                <button type="submit">Update list</button>
+            </form>
+        </div>
     </div>
-    <div id="lists-card"></div>
+    <!-- Lists -->
+    <div id="lists-section">
+        <div class="list-card">
+            <h1>Listname</h1>
+
+        </div>
+    </div>
 </section>
