@@ -15,6 +15,7 @@ import { ListsComponent } from './lists/lists.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ListsComponent,
     AboutComponent,
     HomeComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,
