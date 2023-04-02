@@ -40,6 +40,7 @@ The pages needed for this project is:
 - about page
 - login page
 - register page
+- settings page
 
 **Components**
 

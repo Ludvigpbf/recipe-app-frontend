@@ -1,51 +1,61 @@
 <div id="navbar">
     <nav id="phone-menu">
-        <button [matMenuTriggerFor]="mainMenu"><mat-icon>menu</mat-icon></button>
+        <button type="button" [matMenuTriggerFor]="mainMenu"><mat-icon>menu</mat-icon></button>
     </nav>
     <div id="app-title">
-        <h1><a routerLink="/" routerLinkActive="active">PlatePal</a></h1>
+        <h1><a routerLink="" routerLinkActive="active">PlatePal</a></h1>
     </div>
     <nav id="desctop-menu">
         <div class="page-link-bg">
-            <a routerLink="/" routerLinkActive="active">Home </a>
+            <a routerLink="" routerLinkActive="active">Home </a>
         </div>
         <span>|</span>
         <div class="page-link-bg">
-            <a routerLink="/search-recipe/1" routerLinkActive="active">Search recipes</a>
+            <a routerLink="search-recipe/1" routerLinkActive="active">Search recipes</a>
         </div>
         <span>|</span>
         <div class="page-link-bg">
-            <a routerLink="/lists/1" routerLinkActive="active">My lists</a>
+            <a routerLink="about" routerLinkActive="active">About</a>
         </div>
         <span>|</span>
         <div class="page-link-bg">
-            <a routerLink="/about" routerLinkActive="active">About</a>
+            <a routerLink="lists/1" routerLinkActive="active">My lists</a>
         </div>
 
     </nav>
     <nav id="user-menu">
-        <button [matMenuTriggerFor]="userMenu"><mat-icon>person</mat-icon></button>
+        <button type="button" [matMenuTriggerFor]="userMenu"><mat-icon>person</mat-icon></button>
     </nav>
     <div id="user-buttons">
         <!-- if statment -->
-        <button type="button" id="login">Login</button>
-        <button type="button" id="register">Register</button>
-        <button type="button" id="logout">Logout</button>
+        <div id="login-container">
+            <a id="login" routerLink="/login" routerLinkActive="active">Login</a>
+        </div>
+        <div id="register-container">
+            <a id="register" routerLink="/register" routerLinkActive="active">Register</a>
+        </div>
+        <div id="logout-container">
+            <a id="logout" routerLink="/" routerLinkActive="active">Logout</a>
+        </div>
+        <div id="settings-container">
+            <a id="settings" routerLink="/settings" routerLinkActive="active">Settings</a>
+        </div>
     </div>
 </div>
 
 <!-- Phone menu -->
 <mat-menu #mainMenu>
-    <button mat-menu-item><mat-icon>home</mat-icon>Home</button>
-    <button mat-menu-item><mat-icon>search</mat-icon>Search recipes</button>
-    <button mat-menu-item><mat-icon>info</mat-icon>About</button>
-    <button mat-menu-item><mat-icon>list</mat-icon>My lists</button>
+    <a mat-menu-item routerLink="/" routerLinkActive="active"><mat-icon>home</mat-icon>Home </a>
+    <a mat-menu-item routerLink="/search-recipe/1" routerLinkActive="active"><mat-icon>search</mat-icon>Search
+        recipes</a>
+    <a mat-menu-item routerLink="/about" routerLinkActive="active"><mat-icon>info</mat-icon>About</a>
+    <a mat-menu-item routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My lists</a>
 </mat-menu>
 
 <!-- User menu -->
 <mat-menu #userMenu>
-    <button mat-menu-item><mat-icon>lock_open</mat-icon>Login</button>
-    <button mat-menu-item><mat-icon>assignment</mat-icon>Register</button>
-    <button mat-menu-item><mat-icon>exit_to_app</mat-icon>Logout</button>
-    <button mat-menu-item><mat-icon>settings</mat-icon>Settings</button>
+    <a mat-menu-item routerLink="/login" routerLinkActive="active"><mat-icon>lock_open</mat-icon>Login </a>
+    <a mat-menu-item routerLink="/register" routerLinkActive="active"><mat-icon>assignment</mat-icon>Register </a>
+    <a mat-menu-item routerLink="/" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout </a>
+    <a mat-menu-item routerLink="/settings" routerLinkActive="active"><mat-icon>settings</mat-icon>Settings </a>
 </mat-menu>

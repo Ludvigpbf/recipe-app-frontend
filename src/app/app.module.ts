@@ -19,6 +19,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { ListDetailsComponent } from './list-details/list-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RegisterComponent } from './register/register.component';
     ListDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

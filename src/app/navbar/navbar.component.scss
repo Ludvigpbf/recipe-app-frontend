@@ -42,16 +42,6 @@
     @include desktop {
         #phone-menu {
             display: none;
-
-            ::ng-deep .mat-menu {
-                background-color: red;
-            }
-
-            .mat-menu-item {
-                background-color: red;
-            }
-
-            button {}
         }
 
 
@@ -112,18 +102,21 @@
             justify-content: center;
             align-items: center;
             width: 25rem;
+            height: 8rem;
 
-            button {
+            a {
                 width: 5rem;
-                padding: 1.5rem 1rem 1.5rem 1rem;
-                /* border-radius: 1rem; */
-                background: transparent;
+                text-align: center;
+                text-decoration: none;
                 color: white;
-                border: none;
-                /* background-repeat: no-repeat;
-                transition: background-size .3s, .3s;
-                background-size: 0% 110%;
-                background-position: 0% 50%; */
+                cursor: pointer;
+            }
+
+            #login-container {
+                display: flex;
+                align-items: center;
+                height: 4rem;
+                background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
                 background-repeat: no-repeat;
                 transition: background-size .3s, .3s;
                 background-size: 100% 0%;
@@ -131,22 +124,68 @@
 
                 &:hover {
                     background-size: 100% 100%;
-                    color: black;
-                    border: none;
-                    cursor: pointer;
+
+                    a {
+                        color: black;
+                    }
                 }
             }
 
-            #login {
-                background-image: linear-gradient(rgb(13, 212, 13), rgb(13, 212, 13));
-            }
-
-            #register {
+            #register-container {
+                display: flex;
+                align-items: center;
+                height: 4rem;
                 background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
+                background-repeat: no-repeat;
+                transition: background-size .3s, .3s;
+                background-size: 100% 0%;
+                background-position: 50% 50%;
+
+                &:hover {
+                    background-size: 100% 100%;
+
+                    a {
+                        color: black;
+                    }
+                }
             }
 
-            #logout {
+            #logout-container {
+                display: flex;
+                align-items: center;
+                height: 4rem;
                 background-image: linear-gradient(rgb(232, 32, 32), rgb(232, 32, 32));
+                background-repeat: no-repeat;
+                transition: background-size .3s, .3s;
+                background-size: 100% 0%;
+                background-position: 50% 50%;
+
+                &:hover {
+                    background-size: 100% 100%;
+
+                    a {
+                        color: black;
+                    }
+                }
+            }
+
+            #settings-container {
+                display: flex;
+                align-items: center;
+                height: 4rem;
+                background-image: linear-gradient(rgb(32, 202, 232), rgb(32, 202, 232));
+                background-repeat: no-repeat;
+                transition: background-size .3s, .3s;
+                background-size: 100% 0%;
+                background-position: 50% 50%;
+
+                &:hover {
+                    background-size: 100% 100%;
+
+                    a {
+                        color: black;
+                    }
+                }
             }
         }
     }
