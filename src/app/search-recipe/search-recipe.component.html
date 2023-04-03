@@ -1,16 +1,14 @@
 <section>
     <div id="search-form">
-        <form action="post">
-            <label for="">What are you looking for?</label>
-            <input type="text">
-            <button type="submit">Search</button>
-            <label class="filter">
-                <input type="checkbox" value="0">
-                <span>Chicken</span>
-            </label>
-        </form>
+        <label for="">What are you looking for?</label>
+        <input type="text" [(ngModel)]="searchquery">
+        <button type="button" (click)="getRecipes()">Search</button>
+        <label class="filter">
+            <input type="checkbox" value="0">
+            <span>Chicken</span>
+        </label>
     </div>
-    <h2>"Searchword"</h2>
+    <h2>"searched word"</h2>
     <div id="categories">
         <!-- forloop -->
         <p>"categories"</p><span>|</span>
@@ -18,6 +16,6 @@
     </div>
 
     <div class="recipe-cards">
-        <app-recipe-card></app-recipe-card>
+        <app-recipe-card *ngFor="let recipe of allRecipes" [recipe]="recipe"></app-recipe-card>
     </div>
 </section>
