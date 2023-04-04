@@ -15,6 +15,7 @@ export class RecipeService {
   appid = 'd75cfcf2';
   appkey = '596455008afb3026ede5c7afee8584e9';
   urlConfig = 'https://api.edamam.com/api/recipes/v2?type=public';
+  urlConfigId = 'https://api.edamam.com/api/recipes/v2?type=public' + id;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -31,11 +32,24 @@ export class RecipeService {
       '&app_id=' +
       this.appid +
       '&app_key=' +
-      this.appkey +
-      '&cuisineType=American&mealType=Dinner&field=label&field=image&field=ingredientLines';
+      this.appkey;
 
     return this.http.get<any>(searchquery, this.httpOptions);
   }
+
+  getOneRecipe(qOne: string) {
+    let oneSearchQuery =
+      this.urlConfigId +
+      '&q=' +
+      qOne +
+      '&app_id=' +
+      this.appid +
+      '&app_key=' +
+      this.appkey;
+
+    return this.http.get<any>(oneSearchQuery, this.httpOptions);
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
