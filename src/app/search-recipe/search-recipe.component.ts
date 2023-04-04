@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeService } from '../recipe-service/recipe.service';
+import { RecipeService } from '../services/recipe-service/recipe.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ export class SearchRecipeComponent {
   allRecipes: any;
   searchquery = '';
   loadRecipes = false;
-  word = '';
+  word = '""';
   private routeSub: Subscription = new Subscription();
 
   ngOnInit() {

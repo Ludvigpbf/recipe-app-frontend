@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeService } from '../recipe-service/recipe.service';
+import { RecipeService } from '../services/recipe-service/recipe.service';
 
 @Component({
   selector: 'app-home',
