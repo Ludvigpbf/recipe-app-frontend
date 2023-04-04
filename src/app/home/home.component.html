@@ -27,11 +27,12 @@
             <h3>Your best friend that helps you <br> find the best recipes for every meal!</h3>
         </div>
         <div id="search-container">
-            <form action="post">
+            <div id="search-form">
                 <label for="searchRecipe">What are you craving today?</label>
                 <input type="text" id="searchbox" name="searchRecipe">
-                <button routerLink="/search-recipe/1" routerLinkActive="active" type="submit">Find recipe!</button>
-            </form>
+                <button type="button" routerLink="search-recipe" routerLinkActive="active">Find
+                    recipe!</button>
+            </div>
         </div>
         <div id="bottom-center">
             <span id="egg" class="material-symbols-outlined">
