@@ -1,24 +1,27 @@
-<div id="cards-body">
+<div class="cards-body">
     <div class="card">
         <a [routerLink]="'/recipe-details/'+recipe.idref" routerLinkActive="active">
             <img [src]="recipe.image" [alt]="recipe.label">
-            <div class="recipe-title">
-                <h3>{{recipe.label}}</h3>
-            </div>
-            <div class="recipe-info">
-                <mat-icon class="card-icons">access_time</mat-icon>
-                <p>{{recipe.totalTime}}</p><span>|</span>
-                <mat-icon class="card-icons">people</mat-icon>
-                <p>{{recipe.yield}}p</p>
-                <span>|</span>
-                <mat-icon class="card-icons">favorite_border</mat-icon>
-            </div>
-            <div class="recipe-description">
-                <ul>
-                    <li *ngFor="let ingredient of recipe.ingredientLines">{{ingredient}}</li>
-                </ul>
-
-            </div>
+            <h3>{{recipe.label}}</h3>
         </a>
+        <div class="recipe-info">
+            <mat-icon class="card-icons">access_time</mat-icon>
+            <p>{{recipe.totalTime}}</p><span>|</span>
+            <mat-icon class="card-icons">people</mat-icon>
+            <p>{{recipe.yield}}p</p>
+            <span>|</span>
+            <form action="post">
+                <button class="favourite-recipe" type="submit">
+                    <mat-icon class="card-icons heart">favorite_border</mat-icon>
+                </button>
+            </form>
+        </div>
+        <div class="recipe-description">
+            <ul>
+                <li *ngFor="let ingredient of recipe.ingredientLines">{{ingredient}}</li>
+            </ul>
+
+        </div>
+
     </div>
 </div>

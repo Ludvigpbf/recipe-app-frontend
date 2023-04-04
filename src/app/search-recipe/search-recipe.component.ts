@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../recipe-service/recipe.service';
 import { Subscription } from 'rxjs';
@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
 export class SearchRecipeComponent {
   allRecipes: any;
   searchquery = '';
-  showSpinner = false;
+  loadRecipes = false;
+  word = '';
   private routeSub: Subscription = new Subscription();
 
   ngOnInit() {
@@ -27,30 +28,23 @@ export class SearchRecipeComponent {
 
   constructor(
     private recipeService: RecipeService,
-    private route: ActivatedRoute,
-    private cd: ChangeDetectorRef
+    private route: ActivatedRoute
   ) {}
 
   getRecipes() {
-    this.showSpinner = true;
+    this.loadRecipes = true;
     this.recipeService.getRecipes(this.searchquery).subscribe((result) => {
-      this.showSpinner = false;
-      this.cd.detectChanges();
+      this.loadRecipes = false;
+      let searchedWord = this.searchquery;
       let recipes = result.hits.map((data: any) => {
         let recipe = data.recipe;
         recipe.idref = data._links.self.href.slice(38, 70);
         return recipe;
       });
-      console.log(recipes);
-
+      /* console.log(recipes); */ // Prints recipes
       this.allRecipes = recipes;
+      /* console.log(searchedWord); */ // Prints the searched word
+      this.word = searchedWord;
     });
   }
-
-  /*  loadRecipes() {
-    this.showSpinner = true;
-    setTimeout(() => {
-      this.showSpinner = false;
-    }, 5000);
-  } */
 }

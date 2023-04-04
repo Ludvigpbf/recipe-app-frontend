@@ -9,9 +9,9 @@
         </label>
     </div>
     <div id="progress-container">
-        <mat-spinner id="progress-spinner" [diameter]="50" *ngIf="showSpinner"></mat-spinner>
+        <mat-spinner id="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
     </div>
-    <h2>"searched word"</h2>
+    <h2>{{word}}</h2>
     <div id="categories">
         <!-- forloop -->
         <p>"categories"</p><span>|</span>

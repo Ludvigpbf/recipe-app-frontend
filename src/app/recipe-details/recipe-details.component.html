@@ -1,8 +1,24 @@
-<div *ngIf="oneRecipe">
-    <h2>{{oneRecipe.recipe.label}}</h2>
-    <img [src]=" oneRecipe.recipe.image" [alt]="oneRecipe.recipe.label">
-    <ul>
-        <li *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">{{ingredient}}</li>
-    </ul>
-</div>
-<h1>hello</h1>
+<section id="recipe-container">
+    <div id="recipe-card" *ngIf="oneRecipe">
+        <div id="recipe-info-container">
+            <img [src]=" oneRecipe.recipe.image" [alt]="oneRecipe.recipe.label">
+            <div class="recipe-info">
+                <h2>{{oneRecipe.recipe.label}}</h2>
+                <div id="info-details">
+                    <mat-icon class="card-icons">access_time</mat-icon>
+                    <p>{{oneRecipe.recipe.totalTime}}</p><span>|</span>
+                    <mat-icon class="card-icons">people</mat-icon>
+                    <p>{{oneRecipe.recipe.yield}}p</p>
+                    <span>|</span>
+                    <mat-icon class="card-icons">favorite_border</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div id="recipe-details">
+            <ul>
+                <li *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">{{ingredient}}</li>
+            </ul>
+            <a href="{{oneRecipe.recipe.shareAs}}">Share</a>
+        </div>
+    </div>
+</section>
