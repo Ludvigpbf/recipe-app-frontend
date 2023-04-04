@@ -37,7 +37,7 @@
 
         @include desktop {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             width: 10rem;
             margin-top: 5rem;
             margin-bottom: 5rem;
@@ -54,7 +54,7 @@
 
         @include desktop {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             width: 10rem;
             margin-top: 5rem;
             margin-bottom: 5rem;
@@ -74,7 +74,7 @@
 
         #top-center {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             align-self: flex-end;
             width: 20rem;
 
@@ -189,7 +189,7 @@
 
         @include desktop {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             width: 10rem;
             margin-top: 5rem;
             margin-bottom: 5rem;
@@ -207,7 +207,7 @@
 
         @include desktop {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             width: 10rem;
             margin-top: 5rem;
             margin-bottom: 5rem;

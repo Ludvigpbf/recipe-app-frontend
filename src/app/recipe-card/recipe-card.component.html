@@ -1,19 +1,21 @@
 <div id="cards-body">
     <div class="card">
-        <img [src]="recipe.image" [alt]="recipe.label">
-        <div class="recipe-title">
-            <h3>{{recipe.label}}</h3>
-        </div>
-        <div class="recipe-info">
-            <mat-icon class="card-icons">access_time</mat-icon>
-            <p>1h</p><span>|</span>
-            <mat-icon class="card-icons">people</mat-icon>
-            <p>4p</p>
-            <span>|</span>
-            <mat-icon class="card-icons">favorite_border</mat-icon>
-        </div>
-        <div class="recipe-description">
-            <p>This chicken recipe is the bomb! You must try it. Start with..</p>
-        </div>
+        <a routerLink='/recipe-details/+ {{recipe.label}}' routerLinkActive="active">
+            <img [src]="recipe.image" [alt]="recipe.label">
+            <div class="recipe-title">
+                <h3>{{recipe.label}}</h3>
+            </div>
+            <div class="recipe-info">
+                <mat-icon class="card-icons">access_time</mat-icon>
+                <p>1h</p><span>|</span>
+                <mat-icon class="card-icons">people</mat-icon>
+                <p>4p</p>
+                <span>|</span>
+                <mat-icon class="card-icons">favorite_border</mat-icon>
+            </div>
+            <div class="recipe-description">
+                <p>This chicken recipe is the bomb! You must try it. Start with..</p>
+            </div>
+        </a>
     </div>
 </div>

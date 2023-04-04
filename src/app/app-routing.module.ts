@@ -8,10 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'search-recipe/:id', component: SearchRecipeComponent },
+  { path: 'search-recipe', component: SearchRecipeComponent },
+  { path: 'recipe-details/:id', component: RecipeDetailsComponent },
   { path: 'lists/:id', component: ListsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },

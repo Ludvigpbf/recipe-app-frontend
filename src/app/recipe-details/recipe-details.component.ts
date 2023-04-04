@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-details',
   templateUrl: './recipe-details.component.html',
-  styleUrls: ['./recipe-details.component.scss']
+  styleUrls: ['./recipe-details.component.scss'],
 })
 export class RecipeDetailsComponent {
-
+  @Input() recipe: any;
 }
