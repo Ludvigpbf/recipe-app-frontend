@@ -1,1 +1,22 @@
-/*# sourceMappingURL=about.component.css.map */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50rem;
+}
+#about #title h1 {
+  font-weight: bold;
+}
+#about #main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#about #main-content h2 {
+  font-weight: 600;
+}
+#about #main-content ul li {
+  list-style: disc;
+}/*# sourceMappingURL=about.component.css.map */

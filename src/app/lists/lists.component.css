@@ -1,1 +1,182 @@
-/*# sourceMappingURL=lists.component.css.map */
+#lists {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  /* List section */
+}
+#lists #crud-favourites-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+  /* Crud section */
+  /* Favourites section */
+}
+#lists #crud-favourites-section #crud {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  justify-self: flex-start;
+  min-height: 15rem;
+  min-width: 25rem;
+  /* Create list card */
+  /* Edit list card */
+}
+#lists #crud-favourites-section #crud #create-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgb(193, 192, 192);
+  margin: 2rem;
+  max-height: 20rem;
+  min-width: 20rem;
+  /* Create list form */
+}
+#lists #crud-favourites-section #crud #create-list h2 {
+  text-decoration: underline;
+  margin: 1rem;
+}
+#lists #crud-favourites-section #crud #create-list #create-list-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#lists #crud-favourites-section #crud #create-list #create-list-form label {
+  font-weight: 500;
+  margin: 0.1rem;
+}
+#lists #crud-favourites-section #crud #create-list #create-list-form #list-input {
+  border-radius: 0.2rem;
+  padding: 0.1rem;
+  margin: 0.5rem;
+}
+#lists #crud-favourites-section #crud #create-list #create-list-form #create-list-button {
+  background: transparent;
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  border-radius: 0.3rem;
+  border-color: black;
+  cursor: pointer;
+}
+#lists #crud-favourites-section #crud #edit-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgb(193, 192, 192);
+  margin: 2rem;
+  min-height: 15rem;
+  min-width: 20rem;
+  /* Edit list form */
+}
+#lists #crud-favourites-section #crud #edit-list h2 {
+  text-decoration: underline;
+  margin: 1rem;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form #lists-dropdown-label {
+  font-weight: 500;
+  margin: 0.1rem;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form #list-select-dropdown {
+  min-width: 8rem;
+  border-radius: 0.2rem;
+  padding: 0.1rem;
+  margin: 0.5rem;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form #list-input-label {
+  font-weight: 500;
+  margin: 0.1rem;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form #edit-list-input {
+  border-radius: 0.2rem;
+  padding: 0.1rem;
+  margin: 0.5rem;
+}
+#lists #crud-favourites-section #crud #edit-list #edit-list-form #edit-list-button {
+  background: transparent;
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  border-radius: 0.3rem;
+  border-color: black;
+  cursor: pointer;
+}
+#lists #crud-favourites-section #favourite-recipes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 50rem;
+  margin: 1rem;
+}
+#lists #lists-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+#lists #lists-section #list-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 2px 4px rgb(193, 192, 192);
+  max-width: 30rem;
+  min-height: 20rem;
+  margin: 3rem;
+  /* List card */
+}
+#lists #lists-section #list-container h1 {
+  margin: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+#lists #lists-section #list-container .list-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  min-width: 25rem;
+  margin: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+#lists #lists-section #list-container .list-card .list-title-div {
+  width: 100%;
+}
+#lists #lists-section #list-container .list-card .list-title-div h2 {
+  margin: 0.3rem 0.3rem 0 0.3rem;
+}
+#lists #lists-section #list-container .list-card .list-info-delete-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+#lists #lists-section #list-container .list-card .list-info-delete-div .list-info-div {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: row;
+}
+#lists #lists-section #list-container .list-card .list-info-delete-div .list-info-div p {
+  margin: 0 0.3rem 0.3rem 0.3rem;
+}
+#lists #lists-section #list-container .list-card .list-info-delete-div .list-info-div span {
+  color: black;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+}
+#lists #lists-section #list-container .list-card .list-info-delete-div .delete-list-form .delete-list-button {
+  background: transparent;
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  border-radius: 0.3rem;
+  border-color: black;
+  cursor: pointer;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+}/*# sourceMappingURL=lists.component.css.map */

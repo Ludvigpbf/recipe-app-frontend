@@ -77,17 +77,24 @@
                     background: transparent;
                     cursor: pointer;
                     margin: 0;
-                    padding: 0;
+                    padding: 0.2rem;
+                    border-radius: 50%;
+
+                    &:hover {
+                        /* color: rgb(255, 121, 121); */
+                        background-color: rgb(255, 162, 162);
+
+                    }
 
                     .heart {
                         align-self: center;
 
 
-                        &:hover {
+                        /* &:hover {
                             color: rgb(255, 121, 121);
-                            background-color: rgb(219, 219, 219);
-                            border-radius: 1rem;
-                        }
+                            background-color: rgb(255, 162, 162);
+
+                        } */
                     }
                 }
             }

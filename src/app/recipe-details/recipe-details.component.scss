@@ -19,9 +19,11 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            box-shadow: 1rem 1rem 1rem 1rem black;
+            /* box-shadow: 1rem 1rem 1rem 1rem black; */
 
-            img {}
+            img {
+                margin: 1rem;
+            }
 
             .recipe-info {
                 display: flex;

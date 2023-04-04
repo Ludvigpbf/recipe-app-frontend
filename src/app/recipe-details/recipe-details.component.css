@@ -1,0 +1,47 @@
+#recipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 45rem;
+}
+#recipe-container #recipe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1rem 1rem 1rem 1rem black;
+  width: 70rem;
+}
+#recipe-container #recipe-card #recipe-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 1rem 1rem 1rem 1rem black; */
+}
+#recipe-container #recipe-card #recipe-info-container img {
+  margin: 1rem;
+}
+#recipe-container #recipe-card #recipe-info-container .recipe-info {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+#recipe-container #recipe-card #recipe-info-container .recipe-info h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+#recipe-container #recipe-card #recipe-info-container .recipe-info #info-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#recipe-container #recipe-card #recipe-info-container .recipe-info #info-details p {
+  margin: 0;
+  padding: 0rem 0.2rem 0rem 0.2rem;
+}
+#recipe-container #recipe-card #recipe-info-container .recipe-info #info-details span {
+  padding: 0rem 0.2rem 0rem 0.2rem;
+}/*# sourceMappingURL=recipe-details.component.css.map */
