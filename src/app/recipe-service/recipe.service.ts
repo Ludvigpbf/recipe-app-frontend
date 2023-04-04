@@ -15,7 +15,7 @@ export class RecipeService {
   appid = 'd75cfcf2';
   appkey = '596455008afb3026ede5c7afee8584e9';
   urlConfig = 'https://api.edamam.com/api/recipes/v2?type=public';
-  urlConfigId = 'https://api.edamam.com/api/recipes/v2?type=public' + id;
+  /* urlConfigId = 'https://api.edamam.com/api/recipes/v2?type=public' + id; */
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export class RecipeService {
     return this.http.get<any>(searchquery, this.httpOptions);
   }
 
-  getOneRecipe(qOne: string) {
+  /* getOneRecipe(qOne: string) {
     let oneSearchQuery =
       this.urlConfigId +
       '&q=' +
@@ -48,7 +48,7 @@ export class RecipeService {
       this.appkey;
 
     return this.http.get<any>(oneSearchQuery, this.httpOptions);
-  }
+  } */
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

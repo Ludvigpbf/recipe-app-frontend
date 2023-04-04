@@ -9,58 +9,68 @@
         width: 10rem;
         margin: 1rem;
 
-        img {
-            max-width: 10rem;
-            border-top-left-radius: 0.3rem;
-            border-top-right-radius: 0.3rem;
+        &:hover {
+            background-color: rgb(243, 243, 243);
+            box-shadow: 0px 4px 8px rgb(109, 108, 108);
         }
 
-        .recipe-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        a {
+            color: black;
+            text-decoration: none;
 
-
-            h3 {
-                font-weight: 500;
-                margin: 0;
-                font-size: 1rem;
-                text-align: center;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 9rem;
-            }
-        }
-
-        .recipe-info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-
-            .card-icons {
-                height: 1.2rem;
-                font-size: 1.3rem;
-                text-align: center;
-
+            img {
+                max-width: 10rem;
+                border-top-left-radius: 0.3rem;
+                border-top-right-radius: 0.3rem;
             }
 
-            p {
-                margin: 0;
+            .recipe-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+
+                h3 {
+                    font-weight: 500;
+                    margin: 0;
+                    font-size: 1rem;
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 9rem;
+                }
             }
 
-            span {
-                margin: 0.2rem;
+            .recipe-info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                .card-icons {
+                    height: 1.2rem;
+                    font-size: 1.3rem;
+                    text-align: center;
+
+                }
+
+                p {
+                    margin: 0;
+                }
+
+                span {
+                    margin: 0.2rem;
+                }
+
             }
 
-        }
+            .recipe-description {
+                display: flex;
 
-        .recipe-description {
-            display: flex;
-
-            p {
-                margin: 1rem;
+                p {
+                    margin: 1rem;
+                }
             }
         }
     }
