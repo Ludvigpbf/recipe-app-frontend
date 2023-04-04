@@ -67,9 +67,23 @@
 
             .recipe-description {
                 display: flex;
+                justify-content: center;
 
-                p {
-                    margin: 1rem;
+                ul {
+                    height: 6.5rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 0.6rem;
+                    margin: 0 0.4rem 0.4rem 0.4rem;
+                    padding: 0.3rem;
+
+
+                    li {
+                        margin: 0.4rem;
+                        padding: 0;
+                        width: 6.5rem;
+                        line-height: 0.9rem;
+                    }
                 }
             }
         }

@@ -1,3 +1,8 @@
-<!-- <div *ngFor="let recipe of allRecipes">
-    <h3>{{recipe.label}}</h3>
-</div> -->
+<div *ngIf="oneRecipe">
+    <h2>{{oneRecipe.recipe.label}}</h2>
+    <img [src]=" oneRecipe.recipe.image" [alt]="oneRecipe.recipe.label">
+    <ul>
+        <li *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">{{ingredient}}</li>
+    </ul>
+</div>
+<h1>hello</h1>

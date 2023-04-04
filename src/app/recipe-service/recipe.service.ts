@@ -14,8 +14,7 @@ import { catchError } from 'rxjs/operators';
 export class RecipeService {
   appid = 'd75cfcf2';
   appkey = '596455008afb3026ede5c7afee8584e9';
-  urlConfig = 'https://api.edamam.com/api/recipes/v2?type=public';
-  /* urlConfigId = 'https://api.edamam.com/api/recipes/v2?type=public' + id; */
+  urlConfig = 'https://api.edamam.com/api/recipes/v2/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -27,28 +26,40 @@ export class RecipeService {
   getRecipes(q: string) {
     let searchquery =
       this.urlConfig +
-      '&q=' +
+      '?type=public&q=' +
       q +
       '&app_id=' +
       this.appid +
       '&app_key=' +
-      this.appkey;
-
+      this.appkey +
+      '&field=label' +
+      '&field=idref' +
+      '&field=image' +
+      '&field=ingredientLines' +
+      '&field=yield' +
+      '&field=shareAs' +
+      '&field=totalTime';
     return this.http.get<any>(searchquery, this.httpOptions);
   }
 
-  /* getOneRecipe(qOne: string) {
+  getRecipeId(id: string) {
     let oneSearchQuery =
-      this.urlConfigId +
-      '&q=' +
-      qOne +
-      '&app_id=' +
+      this.urlConfig +
+      id +
+      '?type=public&app_id=' +
       this.appid +
       '&app_key=' +
-      this.appkey;
+      this.appkey +
+      '&field=label' +
+      '&field=idref' +
+      '&field=image' +
+      '&field=ingredientLines' +
+      '&field=yield' +
+      '&field=shareAs' +
+      '&field=totalTime';
 
     return this.http.get<any>(oneSearchQuery, this.httpOptions);
-  } */
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

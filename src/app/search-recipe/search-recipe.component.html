@@ -1,7 +1,9 @@
 <section>
     <div id="search-form">
+        <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
+        <!-- *ngIf="IsWait" -->
         <label for="">What are you looking for?</label>
-        <input type="text" [(ngModel)]="searchquery">
+        <input type="text" (keyup.enter)="getRecipes()" [(ngModel)]="searchquery">
         <button type="button" (click)="getRecipes()">Search</button>
         <label class="filter">
             <input type="checkbox" value="0">
