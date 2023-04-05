@@ -11,8 +11,13 @@
                 <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
             <div class="submit-button">
-                <button type="submit" id="login-button">Login</button>
+                <button type="submit" (click)="login()" id="login-button">Login</button>
+            </div>
+            <div class="submit-button">
+                <button type="submit" (click)="getUser()" id="login-button">Get user</button>
             </div>
         </form>
+        <p>{{user1.name}}</p>
+        <p>{{user1.email}}</p>
     </div>
 </div>
