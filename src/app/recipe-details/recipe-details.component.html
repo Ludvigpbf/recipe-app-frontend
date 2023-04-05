@@ -1,4 +1,7 @@
 <section id="recipe-container">
+    <div class="progress-container">
+        <!-- <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner> -->
+    </div>
     <div id="recipe-card" *ngIf="oneRecipe">
         <div id="recipe-info-container">
             <img [src]=" oneRecipe.recipe.image" [alt]="oneRecipe.recipe.label">
@@ -12,6 +15,14 @@
                     <span>|</span>
                     <mat-icon class="card-icons">favorite_border</mat-icon>
                 </div>
+                <label for="save-to-list">Save to:</label>
+                <form action="post">
+                    <select name="lists" id="save-to-list">
+                        <option value="0">List 1</option>
+                        <option value="0">List 2</option>
+                    </select>
+                    <button type="submit"><mat-icon id="send">send</mat-icon></button>
+                </form>
             </div>
         </div>
         <div id="recipe-details">

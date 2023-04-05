@@ -12,9 +12,11 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'search-recipe/:search', component: SearchRecipeComponent },
   { path: 'search-recipe', component: SearchRecipeComponent },
   { path: 'recipe-details/:id', component: RecipeDetailsComponent },
   { path: 'lists/:id', component: ListsComponent },
+  { path: 'lists', component: ListsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

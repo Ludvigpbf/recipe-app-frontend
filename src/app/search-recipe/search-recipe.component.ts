@@ -13,17 +13,16 @@ export class SearchRecipeComponent {
   searchquery = '';
   loadRecipes = false;
   word = '""';
-  private routeSub: Subscription = new Subscription();
 
   ngOnInit() {
-    this.routeSub = this.route.params.subscribe((params) => {
-      /* console.log(params);
-      console.log(params['id']); */
+    this.route.params.subscribe((params) => {
+      console.log(params);
+      console.log(params['search']);
+      this.searchquery = params['search'];
+      if (this.searchquery) {
+        this.getRecipes();
+      }
     });
-  }
-
-  ngOnDestroy() {
-    this.routeSub.unsubscribe();
   }
 
   constructor(

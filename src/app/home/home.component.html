@@ -29,8 +29,8 @@
         <div id="search-container">
             <div id="search-form">
                 <label for="searchRecipe">What are you craving today?</label>
-                <input type="text" id="searchbox" name="searchRecipe">
-                <button type="button" routerLink="search-recipe" routerLinkActive="active">Find
+                <input type="text" id="searchbox" name="searchRecipe" [(ngModel)]="homeSearch">
+                <button type="button" [routerLink]="'search-recipe/'+ homeSearch" routerLinkActive="active">Find
                     recipe!</button>
             </div>
         </div>

@@ -8,6 +8,8 @@ import { RecipeService } from '../services/recipe-service/recipe.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  homeSearch = '';
+
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute

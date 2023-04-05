@@ -72,12 +72,12 @@ section {
 
     }
 
-    #progress-container {
+    .progress-container {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        #progress-spinner {
+        .progress-spinner {
             margin: 1rem;
         }
     }
