@@ -15,7 +15,7 @@ import { User } from 'src/app/user';
   providedIn: 'root',
 })
 export class AuthService {
-  configUrl = 'https://recipe-app-backend-production.up.railway.app/api/';
+  configUrl = 'http://127.0.0.1:8000/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -31,12 +31,12 @@ export class AuthService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        localStorage.setItem('id', res.user.id);
+        /* localStorage.setItem('id', res.user.id);
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.token); */
         /* window.location.reload(); */
-        this.router.navigate(['/search-recipe']);
+        this.router.navigate(['/login']);
       });
   }
 
@@ -51,7 +51,9 @@ export class AuthService {
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token);
         window.location.reload();
+        /* this.router.navigate(['/search-recipe']); */
       });
+    this.router.navigate(['/search-recipe']);
   }
 
   logOutUser(user: User) {

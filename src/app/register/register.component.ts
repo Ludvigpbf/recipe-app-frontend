@@ -19,7 +19,5 @@ export class RegisterComponent {
 
   register() {
     this.authService.registerUser(this.newUser);
-    console.log(this.newUser);
-    /* this.router.navigate(['/search-recipe']); */
   }
 }
