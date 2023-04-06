@@ -15,11 +15,17 @@ export class LoginComponent {
     password_confirmation: '',
   };
 
+  loadLogin = false;
+  auth: any;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     this.authService.loginUser(this.me);
     console.log(this.me);
+    this.loadLogin = true;
+    this.auth = localStorage.getItem('token');
+    console.log(this.auth);
   }
 
   // Get a user

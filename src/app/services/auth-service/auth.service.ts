@@ -32,12 +32,14 @@ export class AuthService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        localStorage.setItem('id', res.user.id);
+        /* localStorage.setItem('id', res.user.id);
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.token); */
         /* window.location.reload(); */
-        this.router.navigate(['/search-recipe']);
+        window.location.replace(
+          'https://symphonious-mooncake-466ef9.netlify.app/login'
+        );
       });
   }
 
@@ -51,7 +53,9 @@ export class AuthService {
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token);
-        window.location.reload();
+        window.location.replace(
+          'https://symphonious-mooncake-466ef9.netlify.app/search-recipe'
+        );
       });
   }
 
@@ -65,8 +69,8 @@ export class AuthService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        localStorage.clear();
-        window.location.reload();
+        /*  localStorage.clear(); */
+        /*  window.location.replace('http://localhost:4200/'); */
       });
   }
 
