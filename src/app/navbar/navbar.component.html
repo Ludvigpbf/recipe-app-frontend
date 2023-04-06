@@ -17,9 +17,9 @@
         <div class="page-link-bg">
             <a routerLink="about" routerLinkActive="active">About</a>
         </div>
-        <span>|</span>
+        <span *ngIf="auth">|</span>
         <div class="page-link-bg">
-            <a routerLink="lists/1" routerLinkActive="active">My lists</a>
+            <a *ngIf="auth" routerLink="lists/1" routerLinkActive="active">My lists</a>
         </div>
 
     </nav>
@@ -27,18 +27,17 @@
         <button type="button" [matMenuTriggerFor]="userMenu"><mat-icon>person</mat-icon></button>
     </nav>
     <div id="user-buttons">
-        <!-- if statment -->
         <div id="login-container">
-            <a id="login" routerLink="/login" routerLinkActive="active">Login</a>
+            <a *ngIf="!auth" id="login" routerLink="/login" routerLinkActive="active">Login</a>
         </div>
         <div id="register-container">
-            <a id="register" routerLink="/register" routerLinkActive="active">Register</a>
+            <a *ngIf="!auth" id="register" routerLink="/register" routerLinkActive="active">Register</a>
         </div>
         <div id="logout-container">
-            <a id="logout" routerLink="/" routerLinkActive="active">Logout</a>
+            <a *ngIf="auth" (click)="logOut()" id="logout" routerLink="/" routerLinkActive="active">Logout</a>
         </div>
         <div id="settings-container">
-            <a id="settings" routerLink="/settings" routerLinkActive="active">Settings</a>
+            <a *ngIf="auth" id="settings" routerLink="/settings" routerLinkActive="active">Settings</a>
         </div>
     </div>
 </div>
@@ -49,13 +48,16 @@
     <a mat-menu-item routerLink="/search-recipe/1" routerLinkActive="active"><mat-icon>search</mat-icon>Search
         recipes</a>
     <a mat-menu-item routerLink="/about" routerLinkActive="active"><mat-icon>info</mat-icon>About</a>
-    <a mat-menu-item routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My lists</a>
+    <a mat-menu-item *ngIf="auth" routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My lists</a>
 </mat-menu>
 
 <!-- User menu -->
 <mat-menu #userMenu>
-    <a mat-menu-item routerLink="/login" routerLinkActive="active"><mat-icon>lock_open</mat-icon>Login </a>
-    <a mat-menu-item routerLink="/register" routerLinkActive="active"><mat-icon>assignment</mat-icon>Register </a>
-    <a mat-menu-item routerLink="/" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout </a>
-    <a mat-menu-item routerLink="/settings" routerLinkActive="active"><mat-icon>settings</mat-icon>Settings </a>
+    <a mat-menu-item *ngIf="!auth" routerLink="/login" routerLinkActive="active"><mat-icon>lock_open</mat-icon>Login
+    </a>
+    <a mat-menu-item *ngIf="!auth" routerLink="/register"
+        routerLinkActive="active"><mat-icon>assignment</mat-icon>Register </a>
+    <a mat-menu-item *ngIf="auth" routerLink="/" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout </a>
+    <a mat-menu-item *ngIf="auth" routerLink="/settings" routerLinkActive="active"><mat-icon>settings</mat-icon>Settings
+    </a>
 </mat-menu>

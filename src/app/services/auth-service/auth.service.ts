@@ -4,6 +4,7 @@ import {
   HttpErrorResponse,
   HttpHeaders,
 } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -22,11 +23,22 @@ export class AuthService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  /* registerUser(user: User){
-
-  } */
+  registerUser(user: User) {
+    this.http
+      .post<any>(this.configUrl + 'register', user, this.httpOptions)
+      .pipe(catchError(this.handleError))
+      .subscribe((res) => {
+        console.log(res);
+        localStorage.setItem('id', res.user.id);
+        localStorage.setItem('name', res.user.name);
+        localStorage.setItem('email', res.user.email);
+        localStorage.setItem('token', res.token);
+        /* window.location.reload(); */
+        this.router.navigate(['/search-recipe']);
+      });
+  }
 
   loginUser(user: User) {
     this.http
@@ -34,15 +46,30 @@ export class AuthService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
+        localStorage.setItem('id', res.user.id);
+        localStorage.setItem('name', res.user.name);
+        localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token);
+        window.location.reload();
       });
   }
 
-  /* logoutUser(user: User){
-    localStorage.removeItem('token', res.token);
-  } */
+  logOutUser(user: User) {
+    this.httpOptions.headers = this.httpOptions.headers.set(
+      'Authorization',
+      'Bearer ' + localStorage.getItem('token')
+    );
+    this.http
+      .post<any>(this.configUrl + 'logout', user, this.httpOptions)
+      .pipe(catchError(this.handleError))
+      .subscribe((res) => {
+        console.log(res);
+        localStorage.clear();
+        window.location.reload();
+      });
+  }
 
-  getUser1() {
+  /* getUser1() {
     console.log(localStorage.getItem('token'));
     this.httpOptions.headers = this.httpOptions.headers.set(
       'Authorization',
@@ -51,7 +78,7 @@ export class AuthService {
     return this.http
       .get<User[]>(this.configUrl + 'getuser/1', this.httpOptions)
       .pipe(catchError(this.handleError));
-  }
+  } */
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

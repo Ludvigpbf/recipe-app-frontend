@@ -4,20 +4,16 @@
         <form>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" class="form-control" placeholder="Enter email" [(ngModel)]="me.email" name="email">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" [(ngModel)]="me.password"
+                    name="password">
             </div>
             <div class="submit-button">
                 <button type="submit" (click)="login()" id="login-button">Login</button>
             </div>
-            <div class="submit-button">
-                <button type="submit" (click)="getUser()" id="login-button">Get user</button>
-            </div>
         </form>
-        <p>{{user1.name}}</p>
-        <p>{{user1.email}}</p>
     </div>
 </div>

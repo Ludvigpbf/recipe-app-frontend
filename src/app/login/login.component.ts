@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth-service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,33 +8,33 @@ import { AuthService } from '../services/auth-service/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  //from form
   me = {
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  };
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  login() {
+    this.authService.loginUser(this.me);
+    console.log(this.me);
+  }
+
+  // Get a user
+
+  /* user1 = {
     id: 0,
     name: '',
     email: 'nkoch@example.org',
     password: 'password',
   };
 
-  user1 = {
-    id: 0,
-    name: '',
-    email: '',
-    password: '',
-  };
-
-  constructor(private authService: AuthService) {
-    //authService.loginUser(this.me); // ska ej ha denna!!!
-  }
-
-  login() {
-    this.authService.loginUser(this.me);
-  }
-
   getUser() {
     this.authService.getUser1().subscribe((res) => {
       console.log(res[0]);
       this.user1 = res[0];
     });
-  }
+  } */
 }
