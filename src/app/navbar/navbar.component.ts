@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     this.authService.logOutUser(this.me);
-    this.router.navigate(['/']);
+    localStorage.clear();
+    window.location.replace('http://localhost:4200/');
   }
 }

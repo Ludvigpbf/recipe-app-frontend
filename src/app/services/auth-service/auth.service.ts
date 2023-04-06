@@ -36,7 +36,7 @@ export class AuthService {
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token); */
         /* window.location.reload(); */
-        this.router.navigate(['/login']);
+        window.location.replace('http://localhost:4200/login');
       });
   }
 
@@ -50,10 +50,8 @@ export class AuthService {
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token);
-        window.location.reload();
-        /* this.router.navigate(['/search-recipe']); */
+        window.location.replace('http://localhost:4200/search-recipe');
       });
-    this.router.navigate(['/search-recipe']);
   }
 
   logOutUser(user: User) {
@@ -66,8 +64,8 @@ export class AuthService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        localStorage.clear();
-        window.location.reload();
+        /*  localStorage.clear(); */
+        /*  window.location.replace('http://localhost:4200/'); */
       });
   }
 
