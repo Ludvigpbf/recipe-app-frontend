@@ -16,6 +16,7 @@ import { User } from 'src/app/user';
 })
 export class AuthService {
   configUrl = 'https://recipe-app-backend-production.up.railway.app/api/';
+  /* configUrl = 'https://recipe-app-backend-production.up.railway.app/api/'; */
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
