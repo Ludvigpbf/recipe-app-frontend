@@ -11,8 +11,9 @@
     <div class="progress-container">
         <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
     </div>
-    <div *ngIf="recipeShow">
-        <h2>{{word}}</h2>
+    <div class="recipe-show" *ngIf="recipeShow">
+        <h3>You search for:</h3>
+        <h2>"{{word}}"</h2>
         <div id="categories">
             <!-- forloop -->
             <p>"categories"</p><span>|</span>
