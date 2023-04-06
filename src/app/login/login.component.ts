@@ -16,7 +16,7 @@ export class LoginComponent {
   };
 
   loadLogin = false;
-  auth: any;
+  /* auth: any; */
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -24,8 +24,8 @@ export class LoginComponent {
     this.authService.loginUser(this.me);
     console.log(this.me);
     this.loadLogin = true;
-    this.auth = localStorage.getItem('token');
-    console.log(this.auth);
+    /* this.auth = localStorage.getItem('token'); */
+    /* console.log(this.auth); */
   }
 
   // Get a user

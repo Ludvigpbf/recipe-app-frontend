@@ -12,6 +12,7 @@ export class SearchRecipeComponent {
   allRecipes: any;
   searchquery = '';
   loadRecipes = false;
+  recipeShow = false;
   word = '""';
 
   ngOnInit() {
@@ -32,7 +33,9 @@ export class SearchRecipeComponent {
 
   getRecipes() {
     this.loadRecipes = true;
+    this.recipeShow = false;
     this.recipeService.getRecipes(this.searchquery).subscribe((result) => {
+      this.recipeShow = true;
       this.loadRecipes = false;
       let searchedWord = this.searchquery;
       let recipes = result.hits.map((data: any) => {

@@ -15,9 +15,12 @@ export class RegisterComponent {
     password_confirmation: '',
   };
 
+  loadRegister = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   register() {
     this.authService.registerUser(this.newUser);
+    this.loadRegister = true;
   }
 }

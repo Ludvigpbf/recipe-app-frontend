@@ -11,14 +11,16 @@
     <div class="progress-container">
         <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
     </div>
-    <h2>{{word}}</h2>
-    <div id="categories">
-        <!-- forloop -->
-        <p>"categories"</p><span>|</span>
-        <!-- end forloop -->
-    </div>
+    <div *ngIf="recipeShow">
+        <h2>{{word}}</h2>
+        <div id="categories">
+            <!-- forloop -->
+            <p>"categories"</p><span>|</span>
+            <!-- end forloop -->
+        </div>
 
-    <div class="recipe-cards">
-        <app-recipe-card *ngFor="let recipe of allRecipes" [recipe]="recipe"></app-recipe-card>
+        <div class="recipe-cards">
+            <app-recipe-card *ngFor="let recipe of allRecipes" [recipe]="recipe"></app-recipe-card>
+        </div>
     </div>
 </section>
