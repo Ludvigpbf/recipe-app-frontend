@@ -23,7 +23,7 @@ export class RecipeService {
   };
   constructor(private http: HttpClient) {}
 
-  getRecipes(q: string) {
+  getRecipes(q: string, filter: string) {
     let searchquery =
       this.urlConfig +
       '?type=public&q=' +
@@ -32,13 +32,19 @@ export class RecipeService {
       this.appid +
       '&app_key=' +
       this.appkey +
+      filter +
       '&field=label' +
       '&field=idref' +
       '&field=image' +
       '&field=ingredientLines' +
       '&field=yield' +
       '&field=shareAs' +
-      '&field=totalTime';
+      '&field=totalTime' +
+      '&field=healthLabels' +
+      '&field=dietLabels' +
+      '&field=mealType' +
+      '&field=dishType' +
+      '&field=cuisineType';
     return this.http.get<any>(searchquery, this.httpOptions);
   }
 
@@ -56,26 +62,13 @@ export class RecipeService {
       '&field=ingredientLines' +
       '&field=yield' +
       '&field=shareAs' +
-      '&field=totalTime';
+      '&field=totalTime' +
+      '&field=healthLabels' +
+      '&field=dietLabels' +
+      '&field=mealType' +
+      '&field=dishType' +
+      '&field=cuisineType';
 
     return this.http.get<any>(oneSearchQuery, this.httpOptions);
-  }
-
-  private handleError(error: HttpErrorResponse) {
-    if (error.status === 0) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
-      console.error(
-        `Backend returned code ${error.status}, body was: `,
-        error.error
-      );
-    }
-    // Return an observable with a user-facing error message.
-    return throwError(
-      () => new Error('Something bad happened; please try again later.')
-    );
   }
 }

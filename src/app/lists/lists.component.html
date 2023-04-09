@@ -33,9 +33,11 @@
         </div>
 
         <!-- Favourite recipes list -->
-
-        <div id="favourite-recipes">
-            <app-recipe-card></app-recipe-card>
+        <div class="progress-container">
+            <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
+        </div>
+        <div *ngIf="favRecipeShow" id="favourite-recipes">
+            <app-recipe-card *ngFor="let recipe of oneRecipe" [recipe]="recipe"></app-recipe-card>
         </div>
     </div>
 
