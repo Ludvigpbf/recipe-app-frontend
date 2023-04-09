@@ -11,7 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '/', component: HomeComponent },
   { path: 'search-recipe/:search', component: SearchRecipeComponent },
   { path: 'search-recipe', component: SearchRecipeComponent },
   { path: 'recipe-details/:id', component: RecipeDetailsComponent },
