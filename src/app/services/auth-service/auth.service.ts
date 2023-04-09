@@ -76,6 +76,9 @@ export class AuthService {
         /*  localStorage.clear(); */
         /*  window.location.replace('http://localhost:4200/'); */
       });
+    this.router.navigate(['']).then(() => {
+      window.location.reload();
+    });
   }
 
   /* getUser1() {

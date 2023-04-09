@@ -1,31 +1,68 @@
 <div id="navbar">
+    <!-- Phone nav menu -->
     <nav id="phone-menu">
         <button type="button" [matMenuTriggerFor]="mainMenu"><mat-icon>menu</mat-icon></button>
     </nav>
+    <mat-menu #mainMenu>
+        <a mat-menu-item routerLink="" routerLinkActive="active"><mat-icon>home</mat-icon>Home
+        </a>
+        <a mat-menu-item routerLink="/search-recipe" routerLinkActive="active"><mat-icon>search</mat-icon>Search
+            recipes
+        </a>
+        <a mat-menu-item routerLink="/about" routerLinkActive="active"><mat-icon>info</mat-icon>About
+        </a>
+        <a mat-menu-item *ngIf="auth" routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My
+            lists
+        </a>
+    </mat-menu>
+    <!-- Phone nav menu nd-->
+
+    <!-- Logo -->
     <div id="app-title">
         <h1><a routerLink="" routerLinkActive="active">PlatePal</a></h1>
     </div>
+    <!-- Logo end -->
+
+    <!-- Desktop nav menu -->
     <nav id="desctop-menu">
         <div class="page-link-bg">
             <a routerLink="" routerLinkActive="active">Home </a>
         </div>
         <span>|</span>
         <div class="page-link-bg">
-            <a routerLink="search-recipe" routerLinkActive="active">Search recipes</a>
+            <a routerLink="/search-recipe" routerLinkActive="active">Search recipes</a>
         </div>
         <span>|</span>
         <div class="page-link-bg">
-            <a routerLink="about" routerLinkActive="active">About</a>
+            <a routerLink="/about" routerLinkActive="active">About</a>
         </div>
         <span *ngIf="auth">|</span>
         <div class="page-link-bg">
-            <a *ngIf="auth" routerLink="lists/1" routerLinkActive="active">My lists</a>
+            <a *ngIf="auth" routerLink="/lists/1" routerLinkActive="active">My lists</a>
         </div>
-
     </nav>
+    <!-- Desktop nav menu end-->
+
+    <!-- Phone user menu -->
     <nav id="user-menu">
         <button type="button" [matMenuTriggerFor]="userMenu"><mat-icon>person</mat-icon></button>
     </nav>
+    <mat-menu #userMenu>
+        <a mat-menu-item *ngIf="!auth" routerLink="/login" routerLinkActive="active"><mat-icon>lock_open</mat-icon>Login
+        </a>
+        <a mat-menu-item *ngIf="!auth" routerLink="/register"
+            routerLinkActive="active"><mat-icon>assignment</mat-icon>Register
+        </a>
+        <a mat-menu-item *ngIf="auth" (click)="logOut()" routerLink=""
+            routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout
+        </a>
+        <a mat-menu-item *ngIf="auth" routerLink="/settings"
+            routerLinkActive="active"><mat-icon>settings</mat-icon>Settings
+        </a>
+    </mat-menu>
+    <!-- Phone user menu end-->
+
+    <!-- Desktop user menu -->
     <div id="user-buttons">
         <div id="login-container">
             <a *ngIf="!auth" id="login" routerLink="/login" routerLinkActive="active">Login</a>
@@ -40,24 +77,5 @@
             <a *ngIf="auth" id="settings" routerLink="/settings" routerLinkActive="active">Settings</a>
         </div>
     </div>
+    <!-- Desktop user menu end-->
 </div>
-
-<!-- Phone menu -->
-<mat-menu #mainMenu>
-    <a mat-menu-item routerLink="/" routerLinkActive="active"><mat-icon>home</mat-icon>Home </a>
-    <a mat-menu-item routerLink="/search-recipe/1" routerLinkActive="active"><mat-icon>search</mat-icon>Search
-        recipes</a>
-    <a mat-menu-item routerLink="/about" routerLinkActive="active"><mat-icon>info</mat-icon>About</a>
-    <a mat-menu-item *ngIf="auth" routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My lists</a>
-</mat-menu>
-
-<!-- User menu -->
-<mat-menu #userMenu>
-    <a mat-menu-item *ngIf="!auth" routerLink="/login" routerLinkActive="active"><mat-icon>lock_open</mat-icon>Login
-    </a>
-    <a mat-menu-item *ngIf="!auth" routerLink="/register"
-        routerLinkActive="active"><mat-icon>assignment</mat-icon>Register </a>
-    <a mat-menu-item *ngIf="auth" routerLink="/" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout </a>
-    <a mat-menu-item *ngIf="auth" routerLink="/settings" routerLinkActive="active"><mat-icon>settings</mat-icon>Settings
-    </a>
-</mat-menu>
