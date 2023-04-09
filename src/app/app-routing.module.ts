@@ -9,6 +9,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { RegisterComponent } from '../pages/register/register.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { RecipeDetailsComponent } from '../pages/recipe-details/recipe-details.component';
+import { ListDetailsComponent } from 'src/pages/list-details/list-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'recipe-details/:id', component: RecipeDetailsComponent },
   { path: 'lists/:id', component: ListsComponent },
   { path: 'lists', component: ListsComponent },
+  { path: 'list-details/:id', component: ListDetailsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
