@@ -25,8 +25,9 @@ export class NavbarComponent implements OnInit {
   logOut() {
     this.authService.logOutUser(this.me);
     localStorage.clear();
-    window.location.replace(
+    this.router.navigate(['/home']);
+    /* window.location.replace(
       'https://symphonious-mooncake-466ef9.netlify.app/home'
-    );
+    ); */
   }
 }
