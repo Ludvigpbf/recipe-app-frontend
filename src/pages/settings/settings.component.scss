@@ -34,6 +34,7 @@
         justify-content: center;
         align-items: center;
 
+
         label {
             font-weight: bold;
         }
@@ -43,11 +44,12 @@
             padding: 0.5rem;
             border: 1px solid #ccc;
             border-radius: 0.3rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
             box-sizing: border-box;
 
             @include desktop {
                 width: 100%;
+                font-size: 1rem;
             }
         }
     }
