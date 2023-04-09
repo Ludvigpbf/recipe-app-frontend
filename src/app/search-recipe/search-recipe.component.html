@@ -1,14 +1,58 @@
 <section>
     <div id="search-form">
-        <label for="">What are you looking for?</label>
-        <input type="text" (keyup.enter)="getRecipes()" [(ngModel)]="searchquery">
+        <label id="search-label" for="search">What are you looking for?</label>
+        <input id="search-box" type="text" (keyup.enter)="getRecipes()" [(ngModel)]="searchquery">
+        <h2 id="filter-header">Filter</h2>
+        <p class="filter-title">Meal type:</p>
+        <div class="meal-type">
+            <label for="starter" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="starter" [(ngModel)]="filter.starter">
+                <span> Starter</span>
+            </label>
+            <label for="main" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="main" [(ngModel)]="filter.main">
+                <span>Main</span>
+            </label>
+            <label for="dessert" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="dessert" [(ngModel)]="filter.dessert">
+                <span class="checkbox-text">Dessert</span>
+            </label>
+        </div>
+        <p class="filter-title">Allergens:</p>
+        <div class="meal-type">
+            <label for="glutenfree" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="glutenfree" [(ngModel)]="filter.glutenfree">
+                <span class="checkbox-text">Gluten free</span>
+            </label>
+            <label for="vegetarian" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="vegetarian" [(ngModel)]="filter.vegetarian">
+                <span>Vegetarian</span>
+            </label>
+            <label for="vegan" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="vegan" [(ngModel)]="filter.vegan">
+                <span class="checkbox-text">Vegan</span>
+            </label>
+            <!-- <label for="eggfree" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="eggfree" [(ngModel)]="filter.eggfree">
+                <span class="checkbox-text">Egg free</span>
+            </label>
+            <label for="alcoholfree" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="alcoholfree" [(ngModel)]="filter.alcoholfree">
+                <span class="checkbox-text">Alcohol free</span>
+            </label>
+            <label for="dairyfree" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="dairyfree" [(ngModel)]="filter.dairyfree">
+                <span class="checkbox-text">Dairy free</span>
+            </label>
+            <label for="soyfree" class="filter">
+                <input class="filter-checkbox" type="checkbox" id="soyfree" [(ngModel)]="filter.soyfree">
+                <span>Soy free</span>
+            </label> -->
+        </div>
         <button type="button" (click)="getRecipes()">Search</button>
-        <label class="filter">
-            <input type="checkbox" value="0">
-            <span>Chicken</span>
-        </label>
     </div>
-    <div class="progress-container">
+
+    <div class=" progress-container">
         <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
     </div>
     <div class="recipe-show" *ngIf="recipeShow">
@@ -16,7 +60,7 @@
         <h2>"{{word}}"</h2>
         <div id="categories">
             <!-- forloop -->
-            <p>"categories"</p><span>|</span>
+            <!-- <p>diet</p><span>|</span> -->
             <!-- end forloop -->
         </div>
 

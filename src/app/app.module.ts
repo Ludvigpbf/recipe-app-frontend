@@ -25,6 +25,8 @@ import { ListDetailsComponent } from './list-details/list-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CommonModule } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { SettingsComponent } from './settings/settings.component';
     FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
+    CommonModule,
+    TitleCasePipe,
   ],
   providers: [],
   bootstrap: [AppComponent],

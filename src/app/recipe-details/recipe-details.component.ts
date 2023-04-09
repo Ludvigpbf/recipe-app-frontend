@@ -11,6 +11,18 @@ export class RecipeDetailsComponent implements OnInit {
   oneRecipe: any;
   id = '';
 
+  /*  healthlabelSearch = {
+    glutenfree: true,
+    vegetarian: false,
+    vegan: false,
+  };
+
+  healthlabel = {
+    glutenfree: 'Gluten free',
+    vegetarian: 'Vegetarian',
+    vegan: 'Vegan',
+  };
+ */
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute
@@ -18,13 +30,12 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      console.log(params);
-      console.log(params['id']);
+      //  console.log(params); Logs id params
+      //  console.log(params['id']); Logs id
       this.id = params['id'];
-
       this.recipeService.getRecipeId(this.id).subscribe((result) => {
         this.oneRecipe = result;
-        console.log(result);
+        console.log(this.oneRecipe);
       });
     });
   }

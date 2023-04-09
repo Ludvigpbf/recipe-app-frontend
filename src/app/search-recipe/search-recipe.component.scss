@@ -10,22 +10,83 @@ section {
         align-items: center;
         flex-direction: column;
         width: 50rem;
-        height: 30rem;
+        height: 20rem;
         margin: 4rem;
         box-shadow: 0px 2px 4px rgb(193, 192, 192);
         border-radius: 1rem;
 
-        label {
-            font-size: 3rem;
+        #search-label {
+            font-size: 2rem;
             height: 3rem;
             text-align: center;
         }
 
-        input {
+        #search-box {
             border: none;
             box-shadow: 0px 2px 4px rgb(193, 192, 192);
             border-radius: 1rem;
             padding: 0.5rem 1rem 0.5rem 1rem;
+        }
+
+        #filter-header {
+            margin: 0.5rem;
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 0.4rem;
+            text-decoration: underline;
+        }
+
+        .meal-type {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+
+            .filter {
+                margin: 0.1rem;
+
+                .filter-checkbox {
+                    position: absolute;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    &:checked+span {
+                        background-color: rgb(14, 234, 14);
+
+                        &:hover {
+                            background-color: rgb(13, 212, 13);
+                        }
+
+                        &:active {
+                            background-color: rgb(10, 149, 10);
+                        }
+                    }
+                }
+
+                span {
+                    text-align: center;
+                    padding: 0.1rem 0.6rem;
+                    border-radius: 0.2rem;
+                    border: none;
+                    display: block;
+                    font-size: 0.7rem;
+                    background: transparent;
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.143);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(13, 212, 13);
+                    }
+
+                    &:active {
+                        background-color: rgb(10, 149, 10);
+                        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.361);
+                    }
+                }
+            }
+
         }
 
         button {
@@ -41,32 +102,12 @@ section {
 
             &:hover {
                 background-color: rgb(7, 172, 7);
-            }
-        }
 
-        .filter {
-
-            input {
-                display: none;
-
-                &:checked {
-                    color: red;
-                }
             }
 
-            span {
-                text-align: center;
-                padding: 0.1rem 0.8rem;
-                border-radius: 0.2rem;
-                display: block;
-                font-size: 0.8rem;
-                background: transparent;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.361);
-                cursor: pointer;
-
-                &:hover {
-                    background-color: rgb(13, 212, 13);
-                }
+            &:active {
+                background-color: rgb(10, 149, 10);
+                box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.361);
             }
         }
 

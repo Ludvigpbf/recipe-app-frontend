@@ -25,11 +25,46 @@
                 </form>
             </div>
         </div>
-        <div id="recipe-details">
-            <ul>
-                <li *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">{{ingredient}}</li>
-            </ul>
-            <a href="{{oneRecipe.recipe.shareAs}}">Share</a>
+        <div class="filter-container">
+            <div class="filters">
+                <h3>Meal type:</h3>
+                <div class="filter-div">
+
+                    <p>{{oneRecipe.recipe.mealType}}</p>
+                </div>
+                <h3>Dish type:</h3>
+                <div class="filter-div">
+
+                    <p>{{oneRecipe.recipe.dishType}}</p>
+                </div>
+                <h3>Diet:</h3>
+                <div class="filter-div">
+
+                    <p>{{oneRecipe.recipe.dietLabels}}</p>
+                </div>
+                <h3>Allergens</h3>
+                <div class="filter-div">
+
+                    <!-- <p>{{oneRecipe.recipe.healthLabels}} <span>|</span></p> -->
+
+                    <p *ngFor="let healthlabel of oneRecipe.recipe.healthLabels">{{healthlabel}} <span>
+                            | </span></p>
+                </div>
+                <h3>Cuisine type:</h3>
+                <div class="filter-div">
+
+                    <p>{{oneRecipe.recipe.cuisineType}}</p>
+                </div>
+            </div>
+            <div id="recipe-details">
+                <h3>Ingredients:</h3>
+                <ul *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">
+                    <li>{{ingredient}}</li>
+                </ul>
+                <a href="{{oneRecipe.recipe.shareAs}}">Share</a>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- *ngFor="let ingredient of oneRecipe.recipe.ingredientLine" -->
