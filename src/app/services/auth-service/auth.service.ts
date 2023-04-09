@@ -15,7 +15,7 @@ import { User } from 'src/app/user';
   providedIn: 'root',
 })
 export class AuthService {
-  configUrl = 'http://127.0.0.1:8000/api/';
+  configUrl = 'https://recipe-app-backend-production.up.railway.app/api/';
   /* configUrl = 'https://recipe-app-backend-production.up.railway.app/api/'; */
   httpOptions = {
     headers: new HttpHeaders({
