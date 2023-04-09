@@ -21,7 +21,7 @@ export class RegisterComponent {
 
   register() {
     this.authService.registerUser(this.newUser);
-    this.router.navigate(['/login']);
+    /* this.router.navigate(['/login']); */
     this.loadRegister = true;
   }
 }

@@ -9,8 +9,9 @@
                 <h2>Create new list</h2>
                 <form id="create-list-form" action="post">
                     <label for="list-input">List name: </label>
-                    <input type="text" name="list-input" id="list-input" placeholder="Add list title">
-                    <button id="create-list-button" type="submit">Create list</button>
+                    <input type="text" name="list-input" id="list-input" placeholder="Add list title"
+                        [(ngModel)]="newList.title">
+                    <button id=" create-list-button" (click)="createList()">Create list</button>
                 </form>
             </div>
             <div id="edit-list">

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { User } from 'src/app/user';
+import { List } from 'src/app/list';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +24,23 @@ export class ListService {
   };
 
   constructor(private http: HttpClient, private router: Router) {}
+
+  createLists(list: List) {
+    this.http
+      .post<any>(this.configUrl + 'lists', list, this.httpOptions)
+      .pipe(catchError(this.handleError))
+      .subscribe((res) => {
+        console.log(res);
+        /* localStorage.setItem('id', res.user.id);
+        localStorage.setItem('name', res.user.name);
+        localStorage.setItem('email', res.user.email);
+        localStorage.setItem('token', res.token); */
+        /* window.location.reload(); */
+        /*  window.location.replace(
+          'https://symphonious-mooncake-466ef9.netlify.app/login'
+        ); */
+      });
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
