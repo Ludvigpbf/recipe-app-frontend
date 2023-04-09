@@ -16,15 +16,15 @@ export class LoginComponent {
   };
 
   loadLogin = false;
-  /* auth: any; */
+  auth: any;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     this.authService.loginUser(this.me);
     this.loadLogin = true;
-    /* this.auth = localStorage.getItem('token'); */
-    /* this.router.navigate(['/search-recipe']); */
+    this.auth = localStorage.getItem('token');
+    this.router.navigate(['/search-recipe']);
   }
 
   // Get a user
