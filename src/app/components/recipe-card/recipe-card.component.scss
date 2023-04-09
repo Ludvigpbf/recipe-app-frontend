@@ -1,3 +1,9 @@
+@mixin desktop {
+    @media screen and (min-width: 800px) {
+        @content;
+    }
+}
+
 .cards-body {
     display: flex;
     flex-direction: row;
@@ -6,8 +12,13 @@
     .card {
         box-shadow: 0px 2px 4px rgb(193, 192, 192);
         border-radius: 0.3rem;
-        width: 10rem;
+        width: 8rem;
         margin: 1rem;
+
+        @include desktop {
+            width: 10rem;
+
+        }
 
         &:hover {
             background-color: rgb(243, 243, 243);
@@ -23,9 +34,13 @@
             text-decoration: none;
 
             img {
-                max-width: 10rem;
+                max-width: 8rem;
                 border-top-left-radius: 0.3rem;
                 border-top-right-radius: 0.3rem;
+
+                @include desktop {
+                    max-width: 10rem;
+                }
 
                 &:hover {
                     opacity: 0.7;
@@ -35,12 +50,17 @@
             h3 {
                 font-weight: 500;
                 margin: 0 0 0 0;
-                font-size: 1rem;
+                font-size: 0.8rem;
                 text-align: center;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                width: 9rem;
+                width: 7rem;
+
+                @include desktop {
+                    font-size: 1rem;
+                    width: 9rem;
+                }
 
                 &:hover {
                     color: rgb(110, 110, 110);
@@ -60,10 +80,20 @@
                 font-size: 1.3rem;
                 text-align: center;
 
+                @include desktop {
+                    height: 1.2rem;
+                    font-size: 1.3rem;
+                    text-align: center;
+                }
             }
 
             p {
                 margin: 0;
+                font-size: 0.8rem;
+
+                @include desktop {
+                    font-size: 1rem;
+                }
             }
 
             span {
@@ -77,13 +107,21 @@
                     background: transparent;
                     cursor: pointer;
                     margin: 0;
-                    padding: 0.2rem;
+                    padding: 0rem;
                     border-radius: 50%;
 
+                    @include desktop {
+                        padding: 0.2rem;
+                    }
+
                     &:hover {
-                        /* color: rgb(255, 121, 121); */
+
                         background-color: rgb(255, 162, 162);
 
+                    }
+
+                    &:active {
+                        background-color: rgb(231, 147, 147);
                     }
 
                     .heart {

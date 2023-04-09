@@ -15,16 +15,27 @@ section {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 50rem;
+        width: 20rem;
         height: 20rem;
-        margin: 4rem;
+        margin-top: 3rem;
         box-shadow: 0px 2px 4px rgb(193, 192, 192);
         border-radius: 1rem;
 
+        @include desktop {
+            width: 50rem;
+            margin: 4rem;
+        }
+
         #search-label {
-            font-size: 2rem;
+            font-size: 1.5rem;
             height: 3rem;
             text-align: center;
+            margin-top: 1rem;
+
+            @include desktop {
+                font-size: 2rem;
+
+            }
         }
 
         #search-box {
@@ -167,12 +178,17 @@ section {
             align-items: center;
             flex-direction: row;
             flex-wrap: wrap;
-            width: 60rem;
-            padding: 0.5rem;
+            width: 20rem;
             margin: 1rem;
             margin-bottom: 4rem;
-            box-shadow: 0px 2px 4px rgb(193, 192, 192);
             border-radius: 1rem;
+
+            @include desktop {
+                width: 60rem;
+                padding: 0.5rem;
+                box-shadow: 0px 2px 4px rgb(193, 192, 192);
+
+            }
         }
     }
 
