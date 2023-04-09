@@ -10,11 +10,16 @@
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    width: 30%;
+    width: 80%;
     margin: auto;
     margin-top: 8rem;
     box-shadow: 0px 2px 5px rgb(193, 192, 192);
     min-height: 30rem;
+
+    @include desktop {
+        width: 30%;
+
+    }
 
     .card-title {
         text-align: center;
@@ -24,6 +29,11 @@
 
     .form-group {
         margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
 
         label {
             font-weight: bold;
@@ -32,12 +42,17 @@
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-            width: 100%;
+            width: 80%;
             padding: 0.5rem;
             border: 1px solid #ccc;
             border-radius: 0.3rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
             box-sizing: border-box;
+
+            @include desktop {
+                width: 100%;
+                font-size: 1rem;
+            }
 
         }
     }

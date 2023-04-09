@@ -39,6 +39,26 @@
         }
     }
 
+
+    #phone-menu {
+        border-radius: 1rem;
+        margin: 1rem;
+
+        button {
+            background: transparent;
+            border: none;
+
+            mat-icon {
+
+                color: black;
+
+                &:active {
+                    color: gray;
+                }
+            }
+        }
+    }
+
     @include desktop {
         #phone-menu {
             display: none;
@@ -85,6 +105,24 @@
 
         span {
             color: white;
+        }
+    }
+
+    #user-menu {
+        border-radius: 1rem;
+        margin: 1rem;
+
+        button {
+            background: transparent;
+            border: none;
+
+            mat-icon {
+                color: black;
+
+                &:active {
+                    color: gray;
+                }
+            }
         }
     }
 
