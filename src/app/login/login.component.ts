@@ -24,7 +24,10 @@ export class LoginComponent {
     this.authService.loginUser(this.me);
     this.loadLogin = true;
     this.auth = localStorage.getItem('token');
-    this.router.navigate(['/search-recipe']);
+    this.router.navigate(['/search-recipe']).then(() => {
+      window.location.reload();
+    });
+    /* this.router.navigate(['/search-recipe']); */
   }
 
   // Get a user
