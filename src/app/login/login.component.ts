@@ -22,10 +22,9 @@ export class LoginComponent {
 
   login() {
     this.authService.loginUser(this.me);
-    console.log(this.me);
     this.loadLogin = true;
     this.auth = localStorage.getItem('token');
-    console.log(this.auth);
+    this.router.navigate(['/']);
   }
 
   // Get a user
