@@ -23,6 +23,7 @@
                     </select>
                     <button type="submit"><mat-icon id="send">send</mat-icon></button>
                 </form>
+                <a id="share" href="{{oneRecipe.recipe.shareAs}}">More info..</a>
             </div>
         </div>
         <div class="filter-container">
@@ -61,7 +62,6 @@
                 <ul *ngFor="let ingredient of oneRecipe.recipe.ingredientLines">
                     <li>{{ingredient}}</li>
                 </ul>
-                <a href="{{oneRecipe.recipe.shareAs}}">Share</a>
             </div>
         </div>
     </div>

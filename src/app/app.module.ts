@@ -13,20 +13,21 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { RecipeCardComponent } from './recipe-card/recipe-card.component';
-import { SearchRecipeComponent } from './search-recipe/search-recipe.component';
-import { ListsComponent } from './lists/lists.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
-import { ListDetailsComponent } from './list-details/list-details.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { SettingsComponent } from './settings/settings.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RecipeCardComponent } from 'src/app/components/recipe-card/recipe-card.component';
 import { CommonModule } from '@angular/common';
-import { TitleCasePipe } from '@angular/common';
+
+// Pages
+import { SearchRecipeComponent } from '../pages/search-recipe/search-recipe.component';
+import { ListsComponent } from '../pages/lists/lists.component';
+import { AboutComponent } from '../pages/about/about.component';
+import { HomeComponent } from '../pages/home/home.component';
+import { RecipeDetailsComponent } from '../pages/recipe-details/recipe-details.component';
+import { ListDetailsComponent } from '../pages/list-details/list-details.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { RegisterComponent } from '../pages/register/register.component';
+import { SettingsComponent } from '../pages/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,6 @@ import { TitleCasePipe } from '@angular/common';
     HttpClientModule,
     MatProgressSpinnerModule,
     CommonModule,
-    TitleCasePipe,
   ],
   providers: [],
   bootstrap: [AppComponent],
