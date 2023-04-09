@@ -53,7 +53,7 @@ export class AuthService {
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
         localStorage.setItem('token', res.token);
-        window.location.reload();
+        /* window.location.reload(); */
         /* window.location.replace(
           'https://symphonious-mooncake-466ef9.netlify.app/search-recipe'
         ); */
