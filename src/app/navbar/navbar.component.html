@@ -34,7 +34,7 @@
             <a *ngIf="!auth" id="register" routerLink="/register" routerLinkActive="active">Register</a>
         </div>
         <div id="logout-container">
-            <a *ngIf="auth" (click)="logOut()" id="logout" routerLink="/" routerLinkActive="active">Logout</a>
+            <a *ngIf="auth" (click)="logOut()" id="logout" routerLink="" routerLinkActive="active">Logout</a>
         </div>
         <div id="settings-container">
             <a *ngIf="auth" id="settings" routerLink="/settings" routerLinkActive="active">Settings</a>
