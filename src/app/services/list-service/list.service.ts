@@ -27,7 +27,7 @@ export class ListService {
 
   createLists(list: List) {
     this.http
-      .post<any>(this.configUrl + 'lists', list, this.httpOptions)
+      .post<any>(this.configUrl + 'list', list, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
