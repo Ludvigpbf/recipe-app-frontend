@@ -32,14 +32,6 @@ export class ListService {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        /* localStorage.setItem('id', res.user.id);
-        localStorage.setItem('name', res.user.name);
-        localStorage.setItem('email', res.user.email);
-        localStorage.setItem('token', res.token); */
-        /* window.location.reload(); */
-        /*  window.location.replace(
-          'https://symphonious-mooncake-466ef9.netlify.app/login'
-        ); */
       });
   }
 
