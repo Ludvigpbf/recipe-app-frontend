@@ -19,15 +19,16 @@ export class ListService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ',
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
     }),
   };
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  createLists(list: List) {
+  createLists(title: string) {
+    console.log(title);
     this.http
-      .post<any>(this.configUrl + 'list', list, this.httpOptions)
+      .post<any>(this.configUrl + 'list', { title: title }, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
