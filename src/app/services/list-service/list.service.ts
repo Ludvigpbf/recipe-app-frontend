@@ -15,7 +15,7 @@ import { List } from 'src/app/list';
   providedIn: 'root',
 })
 export class ListService {
-  configUrl = 'http://127.0.0.1:8000/api/';
+  configUrl = 'https://recipe-app-backend-production.up.railway.app/api/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
