@@ -24,7 +24,8 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
   addRecipeToList(recipeId: string, listId: number): Observable<any> {
-    const addToListUrl = 'http://127.0.0.1:8000/api/recipe-details/{id}'; // Update with your API URL for adding to list
+    const addToListUrl =
+      'https://recipe-app-backend-production.up.railway.app/api/recipe-details/{id}'; // Update with your API URL for adding to list
 
     // Construct the request body
     const body = {
