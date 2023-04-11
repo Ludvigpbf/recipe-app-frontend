@@ -7,16 +7,16 @@
         <div id="crud">
             <div id="create-list">
                 <h2>Create new list</h2>
-                <form id="create-list-form" action="post">
+                <div id="create-list-form">
                     <label for="list-input">List name: </label>
                     <input type="text" name="list-input" id="list-input" placeholder="Add list title"
                         [(ngModel)]="title">
-                    <button id=" create-list-button" (click)="createList()">Create list</button>
-                </form>
+                    <button id="create-list-button" (click)="createList()">Create list</button>
+                </div>
             </div>
             <div id="edit-list">
                 <h2>Edit list</h2>
-                <form id="edit-list-form" action="post">
+                <div id="edit-list-form">
                     <label id="lists-dropdown-label" for="lists-dropdown">Choose a list:</label>
                     <select name="lists-dropdown" id="list-select-dropdown">
                         <!-- for loop of lists -->
@@ -29,7 +29,7 @@
                     <label id="list-input-label" for="list-input">New list name: </label>
                     <input type="text" name="list-input" id="edit-list-input" placeholder="(listname)">
                     <button id="edit-list-button" type="submit">Done</button>
-                </form>
+                </div>
             </div>
         </div>
 
