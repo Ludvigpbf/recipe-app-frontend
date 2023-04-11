@@ -35,7 +35,7 @@ export class ListsComponent {
   createList() {
     this.listService.createLists(this.title);
     /* this.loadRecipes = true; */
-    console.log(this.newList);
+    console.log(this.title);
   }
   newUser(newUser: any) {
     throw new Error('Method not implemented.');
