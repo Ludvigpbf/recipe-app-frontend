@@ -11,7 +11,7 @@
         </a>
         <a mat-menu-item routerLink="/about" routerLinkActive="active"><mat-icon>info</mat-icon>About
         </a>
-        <a mat-menu-item *ngIf="auth" routerLink="/lists/1" routerLinkActive="active"><mat-icon>list</mat-icon>My
+        <a mat-menu-item *ngIf="auth" routerLink="/lists" routerLinkActive="active"><mat-icon>list</mat-icon>My
             lists
         </a>
     </mat-menu>
@@ -38,7 +38,7 @@
         </div>
         <span *ngIf="auth">|</span>
         <div class="page-link-bg">
-            <a *ngIf="auth" routerLink="/lists/1" routerLinkActive="active">My lists</a>
+            <a *ngIf="auth" routerLink="/lists" routerLinkActive="active">My lists</a>
         </div>
     </nav>
     <!-- Desktop nav menu end-->

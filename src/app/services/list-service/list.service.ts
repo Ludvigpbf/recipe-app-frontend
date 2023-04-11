@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { List } from 'src/app/list';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -26,21 +24,35 @@ export class ListService {
   constructor(private http: HttpClient, private router: Router) {}
 
   createLists(title: string) {
-    console.log(title);
     this.http
       .post<any>(this.configUrl + 'list', { title: title }, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         console.log(res);
-        /* localStorage.setItem('id', res.user.id);
-        localStorage.setItem('name', res.user.name);
-        localStorage.setItem('email', res.user.email);
-        localStorage.setItem('token', res.token); */
-        /* window.location.reload(); */
-        /*  window.location.replace(
-          'https://symphonious-mooncake-466ef9.netlify.app/login'
-        ); */
+        window.location.reload();
       });
+  }
+
+  showLists(): Observable<any> {
+    return this.http
+      .get<any>(this.configUrl + 'lists', this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  getListByTitle(title: string): Observable<any> {
+    return this.http
+      .get<any>(this.configUrl + 'lists/' + title, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  editList(listId: number, title: string): Observable<any> {
+    return this.http
+      .put<any>(
+        this.configUrl + 'editList' + listId,
+        { title: title },
+        this.httpOptions
+      )
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

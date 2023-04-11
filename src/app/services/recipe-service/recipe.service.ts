@@ -23,6 +23,27 @@ export class RecipeService {
   };
   constructor(private http: HttpClient) {}
 
+  addRecipeToList(recipeId: string, listId: number): Observable<any> {
+    const addToListUrl = 'http://127.0.0.1:8000/api/recipe-details/{id}'; // Update with your API URL for adding to list
+
+    // Construct the request body
+    const body = {
+      recipeId: recipeId,
+      listId: listId,
+    };
+
+    // Make the HTTP POST request
+    return this.http.post<any>(addToListUrl, body, this.httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        // Handle error response
+        console.error('Error adding recipe to list:', error);
+        return throwError(
+          'Failed to add recipe to list. Please try again later.'
+        );
+      })
+    );
+  }
+
   getRecipes(q: string, filter: string) {
     let searchquery =
       this.urlConfig +

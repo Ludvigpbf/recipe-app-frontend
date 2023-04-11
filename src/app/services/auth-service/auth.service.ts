@@ -31,15 +31,9 @@ export class AuthService {
       .post<any>(this.configUrl + 'register', user, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
-        console.log(res);
-        /* localStorage.setItem('id', res.user.id);
-        localStorage.setItem('name', res.user.name);
-        localStorage.setItem('email', res.user.email);
-        localStorage.setItem('token', res.token); */
-        /* window.location.reload(); */
-        /*  window.location.replace(
-          'https://symphonious-mooncake-466ef9.netlify.app/login'
-        ); */
+        this.router.navigate(['/login']).then(() => {
+          window.location.reload();
+        });
       });
   }
 
@@ -56,10 +50,6 @@ export class AuthService {
         this.router.navigate(['']).then(() => {
           window.location.reload();
         });
-        /* window.location.reload(); */
-        /* window.location.replace(
-          'https://symphonious-mooncake-466ef9.netlify.app/search-recipe'
-        ); */
       });
   }
 
@@ -71,11 +61,7 @@ export class AuthService {
     this.http
       .post<any>(this.configUrl + 'logout', user, this.httpOptions)
       .pipe(catchError(this.handleError))
-      .subscribe((res) => {
-        console.log(res);
-        /*  localStorage.clear(); */
-        /*  window.location.replace('http://localhost:4200/'); */
-      });
+      .subscribe((res) => {});
     this.router.navigate(['']).then(() => {
       window.location.reload();
     });
