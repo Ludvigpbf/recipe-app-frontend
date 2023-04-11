@@ -20,11 +20,10 @@
                     <label id="lists-dropdown-label" for="lists-dropdown">Choose a list:</label>
                     <select name="lists-dropdown" id="list-select-dropdown">
                         <!-- for loop of lists -->
-                        <option class="list-title-option" value="list-title">Lists</option>
-                        <option class="list-title-option" value="list-title">Lists</option>
-                        <option class="list-title-option" value="list-title">Lists</option>
-                        <option class="list-title-option" value="list-title">Lists</option>
-                        <option class="list-title-option" value="list-title">Lists</option>
+                        <option class="list-title-option" value="list-title"></option>
+                        <option class="list-title-option" value="list-title" *ngFor="let list of lists">{{list.title}}
+                        </option>
+
                     </select>
                     <label id="list-input-label" for="list-input">New list name: </label>
                     <input type="text" name="list-input" id="edit-list-input" placeholder="(listname)">
@@ -36,9 +35,14 @@
         <!-- Favourite recipes list -->
         <div class="progress-container">
             <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
+            <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadCreateList"></mat-spinner>
         </div>
-        <div *ngIf="favRecipeShow" id="favourite-recipes">
-            <app-recipe-card *ngFor="let recipe of oneRecipe" [recipe]="recipe"></app-recipe-card>
+
+        <div id="favourite-recipes">
+            <h2>{{ favouriteList }}</h2>
+            <div *ngIf="favRecipeShow">
+                <app-recipe-card *ngFor="let recipe of oneRecipe" [recipe]="recipe"></app-recipe-card>
+            </div>
         </div>
     </div>
 
@@ -47,32 +51,18 @@
     <div id="lists-section">
         <div id="list-container">
             <h1>Lists</h1>
-            <div class="list-card">
+            <div class="list-card" *ngFor="let list of lists">
                 <div class="list-title-div">
-                    <h2>List title</h2>
+                    <h2>{{list.title}}</h2>
                 </div>
                 <div class="list-info-delete-div">
                     <div class="list-info-div">
                         <p>10 recipes</p><span>|</span>
                         <p>Created: </p>
                     </div>
-                    <form class="delete-list-form" action="post">
+                    <div class="delete-list-form">
                         <button class="delete-list-button" type="submit">Delete</button>
-                    </form>
-                </div>
-            </div>
-            <div class="list-card">
-                <div class="list-title-div">
-                    <h2>List title</h2>
-                </div>
-                <div class="list-info-delete-div">
-                    <div class="list-info-div">
-                        <p>10 recipes</p><span>|</span>
-                        <p>Created: </p>
                     </div>
-                    <form class="delete-list-form" action="post">
-                        <button class="delete-list-button" type="submit">Delete</button>
-                    </form>
                 </div>
             </div>
         </div>
