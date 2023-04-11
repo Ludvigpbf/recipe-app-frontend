@@ -13,21 +13,18 @@ export class ListsComponent {
   loadRecipes = false;
   oneRecipe: any;
   id = '';
+  title = '';
 
-  newList = {
-    title: '',
-  };
-
-  ngOnInit() {
+  /* ngOnInit() {
     this.loadRecipes = true;
     // should be function: getFavouriteRecipes()
     this.recipeService.getRecipeId(this.id).subscribe((result) => {
       this.favRecipeShow = true;
       this.loadRecipes = false;
       this.oneRecipe = result;
-      /* console.log(recipes); */ // Prints recipes
+      console.log(recipes); // Prints recipes
     });
-  }
+  } */
 
   constructor(
     private listService: ListService,
@@ -36,7 +33,7 @@ export class ListsComponent {
   ) {}
 
   createList() {
-    this.listService.createLists(this.newList);
+    this.listService.createLists(this.title);
     /* this.loadRecipes = true; */
   }
   newUser(newUser: any) {
