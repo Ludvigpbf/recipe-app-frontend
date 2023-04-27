@@ -16,12 +16,12 @@
                     <mat-icon class="card-icons">favorite_border</mat-icon>
                 </div>
                 <label for="save-to-list">Save to:</label>
-                <form action="post">
+                <form id="use-this" class="save-to-list">
                     <select name="lists" id="save-to-list">
                         <option value="0"></option>
-                        <option value="0" *ngFor="let list of lists">{{list.title}}</option>
+                        <option>list title</option>
                     </select>
-                    <button type="submit" (click)="addRecipeToList()"><mat-icon id="send">send</mat-icon></button>
+                    <button type="submit"><mat-icon id="send">send</mat-icon></button>
                 </form>
                 <a id="share" href="{{oneRecipe.recipe.shareAs}}">More info..</a>
             </div>
@@ -66,5 +66,3 @@
         </div>
     </div>
 </section>
-
-<!-- *ngFor="let ingredient of oneRecipe.recipe.ingredientLine" -->

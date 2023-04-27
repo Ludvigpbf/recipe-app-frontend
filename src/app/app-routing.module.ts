@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'recipe-details/:id', component: RecipeDetailsComponent },
   { path: 'lists/:id', component: ListsComponent },
   { path: 'lists', component: ListsComponent },
+  { path: 'lists/editList/:id', component: ListsComponent },
   { path: 'list-details/:id', component: ListDetailsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },

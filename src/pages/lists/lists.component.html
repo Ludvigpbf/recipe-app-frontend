@@ -18,24 +18,31 @@
                 <h2>Edit list</h2>
                 <div id="edit-list-form">
                     <label id="lists-dropdown-label" for="lists-dropdown">Choose a list:</label>
-                    <select name="lists-dropdown" id="list-select-dropdown">
+                    <select name="lists-dropdown" id="list-select-dropdown" [(ngModel)]="selectedListId"
+                        (change)="onListSelect()">
                         <!-- for loop of lists -->
-                        <option class="list-title-option" value="list-title"></option>
-                        <option class="list-title-option" value="list-title" *ngFor="let list of lists">{{list.title}}
+                        <option class="list-title-option">Choose a list</option>
+                        <option class="list-title-option" *ngFor="let list of lists" [value]="list.id">
+                            {{list.id}} {{list.title}}
                         </option>
 
                     </select>
                     <label id="list-input-label" for="list-input">New list name: </label>
-                    <input type="text" name="list-input" id="edit-list-input" placeholder="(listname)">
-                    <button id="edit-list-button" type="submit">Done</button>
+                    <input type="text" name="list-input" id="edit-list-input" placeholder="(listname)"
+                        [(ngModel)]="newListTitle">
+                    <button id="edit-list-button" (click)="updateList(selectedListId, newListTitle)">Done</button>
                 </div>
             </div>
         </div>
 
         <!-- Favourite recipes list -->
         <div class="progress-container">
-            <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadRecipes"></mat-spinner>
-            <mat-spinner class="progress-spinner" [diameter]="50" *ngIf="loadCreateList"></mat-spinner>
+            <p *ngIf="loadData">Please wait while we're loading your lists..</p>
+            <mat-spinner class="progress-spinner" id="data" [diameter]="50" *ngIf="loadData"></mat-spinner>
+            <p *ngIf="loadCreateList">Please wait while we're creating your list..</p>
+            <mat-spinner class="progress-spinner" id="create" [diameter]="50" *ngIf="loadCreateList"></mat-spinner>
+            <p *ngIf="loadCreateList">Please wait while we're updating your list..</p>
+            <mat-spinner class="progress-spinner" id="create" [diameter]="50" *ngIf="loadEditList"></mat-spinner>
         </div>
 
         <div id="favourite-recipes">
@@ -53,7 +60,7 @@
             <h1>Lists</h1>
             <div class="list-card" *ngFor="let list of lists">
                 <div class="list-title-div">
-                    <h2>{{list.title}}</h2>
+                    <a [routerLink]="'list-details/'+ listId" routerLinkActive="active">{{list.title}}</a>
                 </div>
                 <div class="list-info-delete-div">
                     <div class="list-info-div">
