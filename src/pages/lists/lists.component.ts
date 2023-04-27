@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
 import { ListService } from 'src/app/services/list-service/list.service';
 import { ActivatedRoute } from '@angular/router';
-import { tap, catchError, throwError } from 'rxjs';
+import { Observable, catchError, tap, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { List } from 'src/app/list';
 
@@ -12,25 +12,38 @@ import { List } from 'src/app/list';
   styleUrls: ['./lists.component.scss'],
 })
 export class ListsComponent implements OnInit {
+  // Progress-spinners
   favRecipeShow = false;
-  loadRecipes = false;
+  loadData = false;
   loadCreateList = false;
+  loadEditList = false;
+
+  // Recipe variable
   oneRecipe: any;
-  id = '';
-  title = '';
+
+  // Get lists
   lists: List[] = [];
   favouriteList = '';
 
+  // Create a list
+  title = '';
+
+  // Update a list
+  listId: number = 0;
+  newListTitle = '';
+  selectedListId: any;
+
   ngOnInit() {
+    this.loadData = true;
     this.getLists();
-    this.listService
+    /* this.listService
       .getListByTitle('Favourite recipes')
       .subscribe((response) => {
         if (response && response.list && response.list.title) {
           this.favouriteList = response.list.title;
           this.oneRecipe = response.list.recipes;
         }
-      });
+      }); */
   }
 
   constructor(
@@ -45,7 +58,9 @@ export class ListsComponent implements OnInit {
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         this.lists = Object.values(res.lists);
-        // console.log(this.lists); Prints array of lists
+        this.loadData = false;
+        this.loadEditList = false;
+        console.log(this.lists);
       }),
       catchError((error) => {
         console.error(error);
@@ -55,21 +70,36 @@ export class ListsComponent implements OnInit {
   }
 
   createList() {
+    this.loadCreateList = true;
     this.listService.createLists(this.title);
-    /* this.loadCreateList = true; */
   }
 
-  updateList(listId: number, newTitle: string) {
-    this.listService.editList(listId, newTitle).subscribe(
+  onListSelect() {
+    // Update the listId variable with the selected list's id
+    this.listId = this.selectedListId;
+  }
+
+  updateList(listId: number, newListTitle: string) {
+    console.log(this.selectedListId);
+    console.log(this.newListTitle);
+    console.log(this.listId);
+    if (!listId || !newListTitle) {
+      // Validate listId and newListTitle values
+      console.error('Invalid data');
+      return;
+    }
+    this.loadEditList = true;
+    return this.listService.editList(listId, newListTitle).subscribe(
       (res) => {
         // Handle successful response here, e.g. display success message
         console.log('List updated successfully');
         // Call function to retrieve updated lists
         this.getLists();
+        this.loadEditList = false;
       },
       (error) => {
-        // Handle error here, e.g. display error message
         console.error(error);
+        throw new Error('Failed to update list');
       }
     );
   }

@@ -3,7 +3,7 @@ import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
 import { ActivatedRoute } from '@angular/router';
 import { ListService } from 'src/app/services/list-service/list.service';
 import { catchError, throwError } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { List } from 'src/app/list';
 
 @Component({
@@ -15,32 +15,22 @@ export class RecipeDetailsComponent implements OnInit {
   oneRecipe: any;
   id = '';
   lists: List[] = [];
-  selectedListId!: number;
+  selectedListId: number = 0;
 
-  /*  healthlabelSearch = {
-    glutenfree: true,
-    vegetarian: false,
-    vegan: false,
-  };
-
-  healthlabel = {
-    glutenfree: 'Gluten free',
-    vegetarian: 'Vegetarian',
-    vegan: 'Vegan',
-  };
- */
   constructor(
     private listService: ListService,
     private recipeService: RecipeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getLists();
     this.route.params.subscribe((params) => {
       //  console.log(params); Logs id params
       // console.log(params['id']); Logs id
       this.id = params['id'];
+      console.log(this.id);
       this.recipeService.getRecipeId(this.id).subscribe((result) => {
         this.oneRecipe = result;
         console.log(this.oneRecipe);
@@ -66,11 +56,6 @@ export class RecipeDetailsComponent implements OnInit {
       });
   }
 
-  addRecipeToList() {
-    this.recipeService
-      .addRecipeToList(this.oneRecipe.id, this.selectedListId)
-      .subscribe((result) => {});
-  }
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

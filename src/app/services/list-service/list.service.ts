@@ -45,11 +45,11 @@ export class ListService {
       .pipe(catchError(this.handleError));
   }
 
-  editList(listId: number, title: string): Observable<any> {
+  editList(listId: number, newListTitle: string): Observable<any> {
     return this.http
       .put<any>(
-        this.configUrl + 'editList' + listId,
-        { title: title },
+        this.configUrl + 'editList/' + listId,
+        { title: newListTitle },
         this.httpOptions
       )
       .pipe(catchError(this.handleError));
